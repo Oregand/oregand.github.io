@@ -1,6 +1,18 @@
 {
+  "name": "oregand-github-io",
+  "version": "1.0.0",
+  "description": "David O'Regan's personal website",
+  "scripts": {
+    "dev": "postcss css/styles.css -o css/output.css --watch",
+    "build": "postcss css/styles.css -o css/output.css"
+  },
   "dependencies": {
-    "axios": "^1.8.4",
-    "xml2js": "^0.6.2"
+    "animate.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2"
   }
 }

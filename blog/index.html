@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David O'Regan's blog on AI, ML, and engineering leadership at GitHub">
+    <title>Blog | David O'Regan | Senior Engineering Manager at GitHub</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../js/main.js" defer></script>
+</head>
+    <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-xl font-bold text-blue-600 dark:text-blue-400">David O'Regan</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                    <a href="../index.html#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                    <a href="../index.html#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
+                    <a href="../index.html#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="../index.html#github-updates" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Copilot Updates</a>
+                    <a href="./index.html" class="text-blue-600 dark:text-blue-400 font-medium">Blog</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Dark mode toggle -->
+                    <div class="flex items-center">
+                        <label for="dark-mode-toggle" class="cursor-pointer relative inline-block w-12 h-6 rounded-full bg-gray-300 dark:bg-gray-700">
+                            <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+                            <span class="absolute left-1 top-1 bg-white dark:bg-gray-800 w-4 h-4 rounded-full transition-transform duration-300 transform dark:translate-x-6"></span>
+                        </label>
+                        <span class="ml-2 text-sm hidden md:inline"><i class="fas fa-moon dark:text-blue-400 dark:inline hidden"></i><i class="fas fa-sun text-yellow-500 dark:hidden"></i></span>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+                <a href="../index.html" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="../index.html#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="../index.html#experience" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Experience</a>
+                <a href="../index.html#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                <a href="../index.html#github-updates" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400">Copilot Updates</a>
+                <a href="./index.html" class="block py-2 text-blue-600 dark:text-blue-400 font-medium">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="bg-white dark:bg-gray-800 py-16 mb-8 shadow-md transition-colors duration-300">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">Blog</h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Thoughts on AI, Engineering Leadership, and GitHub Copilot
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog Posts Section -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog post 1 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards]">
+                <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
+                    <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80" 
+                         alt="AI coding" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5">
+                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">April 18, 2025</p>
+                    <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
+                        <a href="./posts/leveraging-github-copilot-as-an-engineering-manager.html">Leveraging GitHub Copilot as an Engineering Manager</a>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                        As a Senior Engineering Manager at GitHub working on Copilot, I've found unique ways to leverage AI assistants to enhance team productivity and code quality...
+                    </p>
+                    <a href="./posts/leveraging-github-copilot-as-an-engineering-manager.html" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
+                </div>
+            </article>
+            
+            <!-- Blog post 2 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-[fadeIn_0.5s_ease-in-out_0.2s_forwards]">
+                <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80" 
+                         alt="Team collaboration" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5">
+                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">April 10, 2025</p>
+                    <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
+                        <a href="./posts/building-high-performing-ai-teams.html">Building High-Performing AI Teams: Lessons from GitHub</a>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                        The journey of building and leading teams responsible for GitHub Copilot has taught me valuable lessons about balancing technical excellence with human-centered leadership...
+                    </p>
+                    <a href="./posts/building-high-performing-ai-teams.html" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
+                </div>
+            </article>
+            
+            <!-- Blog post 3 -->
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-[fadeIn_0.5s_ease-in-out_0.4s_forwards]">
+                <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
+                    <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80" 
+                         alt="LLM architecture" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5">
+                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">March 28, 2025</p>
+                    <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
+                        <a href="./posts/future-of-llms-in-software-development.html">The Future of LLMs in Software Development</a>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                        From code completions to architectural guidance, Large Language Models are transforming how developers work. Here's my perspective on where this technology is headed...
+                    </p>
+                    <a href="./posts/future-of-llms-in-software-development.html" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="bg-blue-600 dark:bg-blue-800 py-16 mt-12 transition-colors duration-300">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Subscribe to My Newsletter</h2>
+            <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+                Get the latest on AI, engineering leadership, and GitHub Copilot delivered to your inbox.
+            </p>
+            <form class="max-w-md mx-auto">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" 
+                           class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white" required>
+                    <button type="submit" class="bg-white text-blue-600 hover:bg-blue-100 font-semibold py-3 px-6 rounded-lg transition duration-300">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">David O'Regan</h3>
+                    <p class="mb-4 text-gray-300">
+                        Senior Engineering Manager at GitHub working on Copilot. Passionate about AI, engineering leadership, and building great teams.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/oregand" target="_blank" class="text-white hover:text-gray-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" class="text-white hover:text-gray-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://gitlab.com/oregand" target="_blank" class="text-white hover:text-gray-300">
+                            <i class="fab fa-gitlab text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="../index.html#about" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="../index.html#experience" class="text-gray-300 hover:text-white">Experience</a></li>
+                        <li><a href="../index.html#skills" class="text-gray-300 hover:text-white">Skills</a></li>
+                        <li><a href="../index.html#github-updates" class="text-gray-300 hover:text-white">Copilot Updates</a></li>
+                        <li><a href="./index.html" class="text-gray-300 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-6"></i>
+                            <span class="text-gray-300">Dublin, Ireland</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope w-6"></i>
+                            <a href="mailto:contact@davidoregan.com" class="text-gray-300 hover:text-white">contact@davidoregan.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2025 David O'Regan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
