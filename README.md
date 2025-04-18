@@ -6,7 +6,7 @@
 
 ### 🌟 About Me
 
-I'm a versatile leader and developer, driving AI initiatives at GitLab. My expertise spans from frontend development to AI infrastructure, blending technical depth with strategic leadership.
+I'm a versatile leader and developer, driving AI initiatives at GitHub. My expertise spans from frontend development to AI infrastructure, blending technical depth with strategic leadership.
 
 - 🧠 AI Infrastructure Architect
 - 🐍 Python & LLM Specialist
@@ -15,11 +15,11 @@ I'm a versatile leader and developer, driving AI initiatives at GitLab. My exper
 
 ### 🏆 Key Responsibilities & Achievements
 
-- 🤖 Spearheading GitLab's AI evolution: Duo Workflow, Duo Chat, and AI Framework
-- 🛡️ Leading Model Validation and AI Framework teams
-- 🌉 Architecting GitLab's AI Infrastructure and AI Gateway
-- 🏗️ Designing and implementing robust CI/CD pipelines for AI systems
-- 👨‍👩‍👧‍👦 Managing multiple high-impact teams across the AI spectrum
+- 🤖 Leading AI innovation at GitHub
+- 🛡️ Managing AI infrastructure and development teams
+- 🌉 Architecting scalable AI solutions and frameworks
+- 🏗️ Designing robust CI/CD pipelines for AI systems
+- 👨‍👩‍👧‍👦 Directing cross-functional teams across the AI ecosystem
 
 ### 💼 Technical Expertise
 
@@ -27,7 +27,7 @@ I'm a versatile leader and developer, driving AI initiatives at GitLab. My exper
 - **Infrastructure**: Kubernetes, CI/CD, AI Gateway, Scalable Systems
 - **Backend**: Python, RESTful APIs, Microservices Architecture
 - **Frontend**: React, TypeScript, Modern JavaScript
-- **DevOps**: Docker, Kubernetes, GitLab CI/CD
+- **DevOps**: Docker, Kubernetes, GitHub Actions
 
 ### 🛠️ Tech Stack
 
@@ -38,7 +38,7 @@ I'm a versatile leader and developer, driving AI initiatives at GitLab. My exper
   <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
   <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
   <img alt="Git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
-  <img alt="GitLab" src="https://img.shields.io/badge/-GitLab-FCA121?style=flat-square&logo=gitlab&logoColor=white" />
+  <img alt="GitHub" src="https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white" />
 </p>
 
 ### 💼 Leadership Philosophy
