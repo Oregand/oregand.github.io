@@ -7,7 +7,9 @@
     "build": "postcss css/styles.css -o css/output.css"
   },
   "dependencies": {
-    "animate.css": "^4.1.1"
+    "animate.css": "^4.1.1",
+    "axios": "^1.8.4",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
