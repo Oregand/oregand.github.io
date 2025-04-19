@@ -26,15 +26,6 @@
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <!-- Dark mode toggle -->
-                    <div class="flex items-center">
-                        <label for="dark-mode-toggle" class="cursor-pointer relative inline-block w-12 h-6 rounded-full bg-gray-300 dark:bg-gray-700">
-                            <input type="checkbox" id="dark-mode-toggle" class="sr-only">
-                            <span class="absolute left-1 top-1 bg-white dark:bg-gray-800 w-4 h-4 rounded-full transition-transform duration-300 transform dark:translate-x-6"></span>
-                        </label>
-                        <span class="ml-2 text-sm hidden md:inline"><i class="fas fa-moon dark:text-blue-400 dark:inline hidden"></i><i class="fas fa-sun text-yellow-500 dark:hidden"></i></span>
-                    </div>
-                    
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
@@ -66,60 +57,15 @@
 
     <!-- Blog Posts Section -->
     <main class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog post 1 -->
-            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards]">
-                <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
-                    <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80" 
-                         alt="AI coding" class="w-full h-full object-cover">
-                </div>
-                <div class="p-5">
-                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">April 18, 2025</p>
-                    <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
-                        <a href="./posts/leveraging-github-copilot-as-an-engineering-manager.html">Leveraging GitHub Copilot as an Engineering Manager</a>
-                    </h2>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                        As a Senior Engineering Manager at GitHub working on Copilot, I've found unique ways to leverage AI assistants to enhance team productivity and code quality...
-                    </p>
-                    <a href="./posts/leveraging-github-copilot-as-an-engineering-manager.html" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
-                </div>
-            </article>
-            
-            <!-- Blog post 2 -->
-            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-[fadeIn_0.5s_ease-in-out_0.2s_forwards]">
-                <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80" 
-                         alt="Team collaboration" class="w-full h-full object-cover">
-                </div>
-                <div class="p-5">
-                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">April 10, 2025</p>
-                    <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
-                        <a href="./posts/building-high-performing-ai-teams.html">Building High-Performing AI Teams: Lessons from GitHub</a>
-                    </h2>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                        The journey of building and leading teams responsible for GitHub Copilot has taught me valuable lessons about balancing technical excellence with human-centered leadership...
-                    </p>
-                    <a href="./posts/building-high-performing-ai-teams.html" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
-                </div>
-            </article>
-            
-            <!-- Blog post 3 -->
-            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-[fadeIn_0.5s_ease-in-out_0.4s_forwards]">
-                <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
-                    <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80" 
-                         alt="LLM architecture" class="w-full h-full object-cover">
-                </div>
-                <div class="p-5">
-                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">March 28, 2025</p>
-                    <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
-                        <a href="./posts/future-of-llms-in-software-development.html">The Future of LLMs in Software Development</a>
-                    </h2>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                        From code completions to architectural guidance, Large Language Models are transforming how developers work. Here's my perspective on where this technology is headed...
-                    </p>
-                    <a href="./posts/future-of-llms-in-software-development.html" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
-                </div>
-            </article>
+        <!-- Loading indicator -->
+        <div id="blog-loading" class="text-center py-8">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600 dark:border-blue-400"></div>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Loading posts...</p>
+        </div>
+        
+        <!-- Blog posts container - will be populated by JavaScript -->
+        <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Posts will be dynamically added here -->
         </div>
     </main>
 
@@ -193,5 +139,29 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Hide loading indicator when posts are loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogPostsContainer = document.getElementById('blog-posts-container');
+            const loadingIndicator = document.getElementById('blog-loading');
+            
+            // Set up a mutation observer to watch for changes in the posts container
+            const observer = new MutationObserver((mutations) => {
+                if (mutations.some(mutation => mutation.type === 'childList' && mutation.addedNodes.length > 0)) {
+                    // Hide loading indicator when posts are added
+                    loadingIndicator.style.display = 'none';
+                }
+            });
+            
+            // Start observing the posts container
+            observer.observe(blogPostsContainer, { childList: true });
+            
+            // Fallback: hide loading after 5 seconds even if posts don't load
+            setTimeout(() => {
+                loadingIndicator.style.display = 'none';
+            }, 5000);
+        });
+    </script>
 </body>
 </html>

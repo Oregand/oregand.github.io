@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  
+  // Load blog posts dynamically if we're on the blog index page
+  loadBlogPosts();
 });
 
 // Helper function to check if element is in viewport
@@ -77,4 +80,119 @@ function isElementInViewport(element) {
     rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
     rect.right >= 0
   );
+}
+
+// Function to load blog posts dynamically
+async function loadBlogPosts() {
+  const blogPostsContainer = document.getElementById('blog-posts-container');
+  
+  // Only proceed if we're on a page with the blog posts container
+  if (!blogPostsContainer) return;
+  
+  try {
+    const response = await fetch('/data/blog-posts.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const posts = await response.json();
+    
+    // Sort posts by date (newest first)
+    posts.sort((a, b) => new Date(b.dateISO) - new Date(a.dateISO));
+    
+    // Clear existing content
+    blogPostsContainer.innerHTML = '';
+    
+    // Add posts with staggered animation delay
+    posts.forEach((post, index) => {
+      const article = createBlogPostElement(post, index);
+      blogPostsContainer.appendChild(article);
+    });
+  } catch (error) {
+    console.error('Error loading blog posts:', error);
+    blogPostsContainer.innerHTML = '<p class="text-center text-red-500">Failed to load blog posts. Please try again later.</p>';
+  }
+}
+
+// Function to create an individual blog post element
+function createBlogPostElement(post, index) {
+  const article = document.createElement('article');
+  article.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0';
+  
+  // Add staggered animation with delay based on index
+  article.style.animationDelay = `${index * 0.2}s`;
+  article.classList.add('animate-[fadeIn_0.5s_ease-in-out_forwards]');
+  
+  article.innerHTML = `
+    <div class="h-48 bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden rounded-t-lg">
+      <img src="${post.image}" alt="${post.imageAlt}" class="w-full h-full object-cover">
+    </div>
+    <div class="p-5">
+      <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-2">${post.date}</p>
+      <h2 class="text-xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
+        <a href="${post.url}">${post.title}</a>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+        ${post.excerpt}
+      </p>
+      <a href="${post.url}" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Read more →</a>
+    </div>
+  `;
+  
+  return article;
+}
+
+// Function to load related posts on a blog post page
+async function loadRelatedPosts(currentPostId) {
+  const relatedPostsContainer = document.getElementById('related-posts-container');
+  
+  // Only proceed if we're on a page with the related posts container
+  if (!relatedPostsContainer) return;
+  
+  try {
+    const response = await fetch('/data/blog-posts.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const posts = await response.json();
+    
+    // Filter out current post and get up to 3 other posts
+    const relatedPosts = posts
+      .filter(post => post.id !== currentPostId)
+      .slice(0, 3);
+    
+    if (relatedPosts.length === 0) {
+      relatedPostsContainer.parentElement.style.display = 'none';
+      return;
+    }
+    
+    // Clear existing content
+    relatedPostsContainer.innerHTML = '';
+    
+    // Add related posts
+    relatedPosts.forEach((post) => {
+      const article = document.createElement('article');
+      article.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1';
+      
+      article.innerHTML = `
+        <div class="h-40 bg-gray-200 dark:bg-gray-700 overflow-hidden rounded-t-lg">
+          <img src="${post.image}" alt="${post.imageAlt}" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4">
+          <p class="text-blue-600 dark:text-blue-400 text-xs font-medium mb-1">${post.date}</p>
+          <h3 class="text-lg font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400">
+            <a href="${post.url}">${post.title}</a>
+          </h3>
+          <a href="${post.url}" class="text-blue-600 dark:text-blue-400 font-medium hover:underline text-sm">Read more →</a>
+        </div>
+      `;
+      
+      relatedPostsContainer.appendChild(article);
+    });
+  } catch (error) {
+    console.error('Error loading related posts:', error);
+    relatedPostsContainer.innerHTML = '';
+    relatedPostsContainer.parentElement.style.display = 'none';
+  }
 }
