@@ -13,32 +13,6 @@
     "url": "./posts/leveraging-github-copilot-as-an-engineering-manager.html"
   },
   {
-    "id": "building-high-performing-ai-teams",
-    "title": "Building High-Performing AI Teams: Lessons from GitHub",
-    "date": "April 10, 2025",
-    "dateISO": "2025-04-10",
-    "author": "David O'Regan",
-    "authorImage": "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4",
-    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80",
-    "imageAlt": "Team collaboration",
-    "excerpt": "The journey of building and leading teams responsible for GitHub Copilot has taught me valuable lessons about balancing technical excellence with human-centered leadership...",
-    "readTime": "6 min read",
-    "url": "./posts/building-high-performing-ai-teams.html"
-  },
-  {
-    "id": "future-of-llms-in-software-development",
-    "title": "The Future of LLMs in Software Development",
-    "date": "March 28, 2025",
-    "dateISO": "2025-03-28",
-    "author": "David O'Regan",
-    "authorImage": "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4",
-    "image": "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1740&q=80",
-    "imageAlt": "LLM architecture",
-    "excerpt": "From code completions to architectural guidance, Large Language Models are transforming how developers work. Here's my perspective on where this technology is headed...",
-    "readTime": "5 min read",
-    "url": "./posts/future-of-llms-in-software-development.html"
-  },
-  {
     "id": "how-i-used-ai-to-rebuild-my-shoulder",
     "title": "How I Used AI to Rebuild My Shoulder",
     "date": "March 15, 2025",
