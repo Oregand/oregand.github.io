@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en" class="dark:bg-gray-800">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,77 +13,6 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-    }
-    
-    /* Dark mode styles */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #1f2937;
-        color: #f3f4f6;
-      }
-      
-      h1 {
-        color: #3b82f6 !important;
-        border-bottom-color: #374151 !important;
-      }
-      
-      .feed-title a {
-        color: #60a5fa !important;
-      }
-      
-      .feed-date {
-        color: #9ca3af !important;
-      }
-      
-      .feed-description {
-        color: #d1d5db !important;
-      }
-      
-      .update-info {
-        color: #9ca3af !important;
-      }
-      
-      .feed-item {
-        border-bottom-color: #374151 !important;
-      }
-    }
-    
-    /* Add explicit dark mode class for when parent forces dark mode */
-    html.dark-mode body,
-    html.dark body {
-      background-color: #1f2937;
-      color: #f3f4f6;
-    }
-    
-    html.dark-mode h1,
-    html.dark h1 {
-      color: #3b82f6 !important;
-      border-bottom-color: #374151 !important;
-    }
-    
-    html.dark-mode .feed-title a,
-    html.dark .feed-title a {
-      color: #60a5fa !important;
-    }
-    
-    html.dark-mode .feed-date,
-    html.dark .feed-date {
-      color: #9ca3af !important;
-    }
-    
-    html.dark-mode .feed-description,
-    html.dark .feed-description {
-      color: #d1d5db !important;
-    }
-    
-    html.dark-mode .update-info,
-    html.dark .update-info {
-      color: #9ca3af !important;
-    }
-    
-    html.dark-mode .feed-item,
-    html.dark .feed-item {
-      border-bottom-color: #374151 !important;
     }
     
     h1 {
@@ -129,34 +59,6 @@
       font-style: italic;
     }
   </style>
-  <script>
-    // Check if parent page has dark mode enabled
-    function checkDarkMode() {
-      try {
-        const isDark = window.parent.document.documentElement.classList.contains('dark');
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      } catch (e) {
-        // If we can't access parent due to same-origin policy, fall back to media query
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-          document.documentElement.classList.add('dark-mode');
-        }
-      }
-    }
-
-    // Run on load
-    window.addEventListener('DOMContentLoaded', checkDarkMode);
-    // Try to sync with parent theme changes
-    window.addEventListener('message', function(event) {
-      if (event.data === 'theme-changed') {
-        checkDarkMode();
-      }
-    });
-  </script>
 </head>
 <body>
   <h1>GitHub Copilot Latest Updates</h1>
@@ -292,7 +194,7 @@ The post Copilot Chat users can use the Gemini 2.5 Pro model in public preview a
   </div>
 
   <div class="update-info">
-    Feed last updated: April 19, 2025 at 12:13 PM
+    Feed last updated: April 20, 2025 at 12:45 AM
   </div>
 </body>
 </html>
