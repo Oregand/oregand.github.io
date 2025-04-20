@@ -10,7 +10,7 @@
     "imageAlt": "AI coding",
     "excerpt": "As a Senior Engineering Manager at GitHub working on Copilot, I've found unique ways to leverage AI assistants to enhance team productivity and code quality...",
     "readTime": "8 min read",
-    "url": "./posts/leveraging-github-copilot-as-an-engineering-manager.html"
+    "url": "./blog/posts/leveraging-github-copilot-as-an-engineering-manager.html"
   },
   {
     "id": "how-i-used-ai-to-rebuild-my-shoulder",
@@ -23,6 +23,6 @@
     "imageAlt": "Physical therapy session",
     "excerpt": "After a shoulder injury, I turned to AI-powered tools to guide my recovery process. Here's how machine learning helped me rebuild strength and mobility...",
     "readTime": "7 min read",
-    "url": "./posts/how-i-used-ai-to-rebuild-my-shoulder.html"
+    "url": "./blog/posts/how-i-used-ai-to-rebuild-my-shoulder.html"
   }
 ]

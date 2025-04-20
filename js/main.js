@@ -6,34 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Dark mode toggle
-  const darkModeToggle = document.getElementById('dark-mode-toggle');
-  
-  // Check for saved theme preference or use OS preference
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = localStorage.getItem('theme');
-  
-  // Apply theme
-  if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
-    document.documentElement.classList.add('dark');
-    if (darkModeToggle) {
-      darkModeToggle.checked = true;
-    }
-  }
-  
-  // Handle toggle change
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('change', () => {
-      if (darkModeToggle.checked) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  }
-
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -101,6 +73,7 @@ function getBlogDataPath() {
   if (path.includes('/blog/posts/')) {
     return '../../data/blog-posts.json';
   } else if (path.includes('/blog/')) {
+    // We're on the blog index page
     return '../data/blog-posts.json';
   } else {
     // We're on the main page or another top-level page
