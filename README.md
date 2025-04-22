@@ -1,4 +1,8 @@
-# Hey there, I'm David! 👋 <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px">
+# David O'Regan's Personal Website and Blog
+
+This repository contains my personal website and blog, built with Jekyll and deployed on GitHub Pages.
+
+## Hey there, I'm David! 👋 <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px">
 
 ## 🚀 Senior Engineering Manager & Full-Stack AI Developer
 
@@ -44,6 +48,84 @@ I'm a versatile leader and developer, driving AI initiatives at GitHub. My exper
 ### 💼 Leadership Philosophy
 
 I believe in being an approachable manager and a [human-first leader](#). My focus is on empowering teams to innovate, deliver, and grow in the rapidly evolving AI landscape.
+
+## 💫 Inspiration
+
+This site is inspired by the work and writing style of [Ben Balter](https://ben.balter.com/), Director of Hubber Enablement within the Office of the COO at GitHub. I particularly appreciate his detailed, thoughtful posts on GitHub culture, such as [The seven habits of highly effective GitHubbers](https://ben.balter.com/2016/09/13/seven-habits-of-highly-effective-githubbers/), which provides valuable insights into GitHub's unique work culture through traits like:
+
+- Professional, but not formal
+- Ship early, ship often
+- If you see something, say something
+- Curiosity and self-improvement
+- Always be willing to help
+- Contribute to the appreciation economy
+- Honesty, integrity, and authenticity
+
+Ben's approach to transparent, human-centric technical writing has greatly influenced how I structure my own posts and share my experiences.
+
+## How to Add a New Blog Post
+
+With Jekyll, adding a new blog post is simple:
+
+1. Create a new Markdown file in the `_posts` directory with the filename format: `YYYY-MM-DD-title-with-hyphens.md`
+2. Add the YAML front matter at the top of the file with the required metadata:
+
+```yaml
+---
+layout: post
+title: "Your Blog Post Title"
+date: YYYY-MM-DD
+author: "David O'Regan"
+authorImage: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+image: "URL-to-your-header-image"
+imageAlt: "Description of the image for accessibility"
+excerpt: "A brief excerpt of your blog post that will appear in previews..."
+readTime: "X min read"
+description: "SEO-friendly description of your post"
+---
+
+Your blog post content goes here, written in Markdown.
+```
+
+3. Write your blog post content in Markdown below the front matter
+4. Commit and push to GitHub - your post will be automatically published!
+
+## Writing Tips
+
+- Use Markdown headings (`##` for H2, `###` for H3, etc.)
+- Include images with `![Alt text](image-url)`
+- Create links with `[Link text](URL)`
+- Use code blocks with triple backticks
+- Create blockquotes with `>`
+- Create lists with `-` or `1.` for numbered lists
+
+## Local Development
+
+If you want to preview changes locally (optional):
+
+1. Install Ruby and Bundler
+2. Run `bundle install` to install dependencies
+3. Run `bundle exec jekyll serve` to start the development server
+4. Visit `http://localhost:4000` in your browser
+
+## Site Structure
+
+- `_posts/`: Contains all blog posts as Markdown files
+- `_layouts/`: Contains the HTML templates for different page types
+- `_includes/`: Contains reusable HTML components
+- `_config.yml`: Main configuration file for Jekyll
+- `assets/images/`: Store images here
+- `css/`: Contains stylesheets
+
+## GitHub Pages Deployment
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch using the GitHub Actions workflow defined in `.github/workflows/jekyll-gh-pages.yml`.
+
+## Need Help?
+
+If you need assistance with Jekyll or GitHub Pages, check out:
+- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)
 
 ### 📫 Let's Connect!
 

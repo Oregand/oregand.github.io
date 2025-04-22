@@ -1,0 +1,50 @@
+title: David O'Regan
+email: doregan@github.com
+description: >-
+  David O'Regan's personal website and blog - Senior Engineering Manager at GitHub working on Copilot.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://oregand.github.io" # the base hostname & protocol for your site
+twitter_username: your-twitter-username
+github_username: oregand
+author: "David O'Regan"
+author_image: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+show_excerpts: true
+
+# GitHub Pages settings
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
+# Collections - for different content types
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "David O'Regan"
+      authorImage: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
