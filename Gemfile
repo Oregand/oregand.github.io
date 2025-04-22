@@ -1,5 +1,11 @@
 source "https://rubygems.org"
 
+# Specify minimum Ruby version for compatibility
+ruby "~> 3.2"
+
+# Specify Bundler version (matches the one in GitHub Actions)
+gem "bundler", "~> 2.4.10"
+
 # Use GitHub Pages for deployment
 gem "github-pages", group: :jekyll_plugins
 gem "webrick", "~> 1.8"  # Needed for Ruby version 3.0+
