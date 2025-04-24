@@ -25,16 +25,14 @@ layout: default
         {% if page.image %}
         <div class="h-80 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden mb-8">
             <img src="{{ page.image }}" 
-                 alt="{{ page.imageAlt }}" class="w-full h-full object-cover">
+                 alt="{{ page.imageAlt | default: page.title }}" class="w-full h-full object-cover">
         </div>
         {% endif %}
     </header>
 
-    <!-- Post Content -->
-    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert">
-        <div class="space-y-6 text-gray-800 dark:text-gray-200">
-            {{ content }}
-        </div>
+    <!-- Post Content with Enhanced Tailwind Classes -->
+    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert prose-headings:text-secondary dark:prose-headings:text-gray-100 prose-a:text-primary dark:prose-a:text-blue-400 prose-blockquote:border-l-4 prose-blockquote:border-primary dark:prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-pre:bg-gray-100 dark:prose-pre:bg-gray-800 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-img:rounded-lg prose-img:my-8">
+        {{ content }}
     </div>
     
     <div class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
@@ -64,7 +62,7 @@ layout: default
                     <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
                         <a href="{{ post.url | relative_url }}">
                             <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                                <img src="{{ post.image }}" alt="{{ post.imageAlt }}" class="w-full h-full object-cover">
+                                <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover">
                             </div>
                         </a>
                         <div class="p-6">
@@ -89,135 +87,3 @@ layout: default
         </div>
     </div>
 </section>
-
-<style>
-/* Additional blog post styling */
-.prose h1 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-    font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--tw-prose-headings);
-}
-
-.prose h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--tw-prose-headings);
-}
-
-.prose h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--tw-prose-headings);
-}
-
-.prose p {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.75;
-}
-
-.prose ul, .prose ol {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.625rem;
-    line-height: 1.75;
-}
-
-.prose li {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.prose blockquote {
-    border-left-width: 4px;
-    border-left-color: var(--tw-prose-quote-borders);
-    padding-left: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-
-.prose strong {
-    font-weight: 600;
-    color: var(--tw-prose-bold);
-}
-
-.prose a {
-    color: var(--tw-prose-links);
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-.prose img {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 0.375rem;
-}
-
-.prose code {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.875em;
-    padding: 0.2em 0.4em;
-    border-radius: 0.25rem;
-    background-color: var(--tw-prose-pre-bg);
-    color: var(--tw-prose-pre-code);
-}
-
-.prose pre {
-    background-color: var(--tw-prose-pre-bg);
-    border-radius: 0.375rem;
-    overflow-x: auto;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.prose pre code {
-    padding: 0;
-    background-color: transparent;
-    color: inherit;
-}
-
-.dark .prose {
-    --tw-prose-body: #d1d5db;
-    --tw-prose-headings: #f3f4f6;
-    --tw-prose-links: #60a5fa;
-    --tw-prose-bold: #f3f4f6;
-    --tw-prose-counters: #9ca3af;
-    --tw-prose-bullets: #9ca3af;
-    --tw-prose-hr: #374151;
-    --tw-prose-quote-borders: #4b5563;
-    --tw-prose-captions: #9ca3af;
-    --tw-prose-code: #f3f4f6;
-    --tw-prose-pre-code: #e5e7eb;
-    --tw-prose-pre-bg: #1f2937;
-    --tw-prose-th-borders: #4b5563;
-    --tw-prose-td-borders: #374151;
-}
-
-.prose {
-    --tw-prose-body: #374151;
-    --tw-prose-headings: #111827;
-    --tw-prose-links: #2563eb;
-    --tw-prose-bold: #111827;
-    --tw-prose-counters: #6b7280;
-    --tw-prose-bullets: #6b7280;
-    --tw-prose-hr: #e5e7eb;
-    --tw-prose-quote-borders: #e5e7eb;
-    --tw-prose-captions: #6b7280;
-    --tw-prose-code: #111827;
-    --tw-prose-pre-code: #e5e7eb;
-    --tw-prose-pre-bg: #1f2937;
-    --tw-prose-th-borders: #d1d5db;
-    --tw-prose-td-borders: #e5e7eb;
-}
-</style>

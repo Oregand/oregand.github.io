@@ -4,7 +4,7 @@ title: "Building an AI Coach Based on My Mentor's Communication Style"
 date: 2025-04-24
 categories: ai productivity mentorship
 description: "How I created an AI assistant that helps me communicate like my mentor Michelle Gill by fine-tuning Claude on her most brilliant comments."
-image: /assets/images/ai-mentor-coach.jpg
+image: https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
 ---
 
 ## The Challenge of Clear Communication
@@ -332,13 +332,3 @@ async function transformWithContext(userDraft, projectId, issueId, type) {
 This AI coach has transformed my written communication. I've received feedback that my messages are more actionable and clear. Discussions I lead tend to reach conclusions faster, and there's less back-and-forth needed to clarify expectations.
 
 What I find particularly valuable is how this tool has trained me over time. I'm starting to internalize these communication patterns, and I now often catch myself instinctively structuring messages in a more effective way, even before using the AI assistant.
-
-### Example Transformation
-
-Here's a real example of how the AI coach transformed one of my messages:
-
-> **Original Message**: 
-> Hey team, just checking in on the status of the project. Can someone provide an update?
-> 
-> **Transformed Message**: 
-> Hi team, I wanted to touch base regarding the project status. @John, could you please share the latest updates? If there are any blockers, let's discuss how we can resolve them promptly. Thanks!
