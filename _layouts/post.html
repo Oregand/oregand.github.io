@@ -30,8 +30,22 @@ layout: default
         {% endif %}
     </header>
 
-    <!-- Post Content with Enhanced Tailwind Classes -->
-    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert prose-headings:text-secondary dark:prose-headings:text-gray-100 prose-a:text-primary dark:prose-a:text-blue-400 prose-blockquote:border-l-4 prose-blockquote:border-primary dark:prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-pre:bg-gray-100 dark:prose-pre:bg-gray-800 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-img:rounded-lg prose-img:my-8">
+    <!-- Post Content with Enhanced Tailwind Typography Classes -->
+    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert 
+                prose-headings:text-secondary dark:prose-headings:text-gray-100 
+                prose-a:text-primary dark:prose-a:text-blue-400 
+                prose-blockquote:border-l-4 prose-blockquote:border-primary dark:prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic 
+                prose-img:rounded-lg prose-img:my-8
+                
+                prose-code:font-mono prose-code:text-sm prose-code:px-1 prose-code:py-0.5 prose-code:rounded 
+                prose-code:bg-slate-100 prose-code:text-rose-500 dark:prose-code:bg-slate-800 dark:prose-code:text-rose-400
+                
+                prose-pre:bg-slate-50 dark:prose-pre:bg-slate-900 prose-pre:shadow 
+                prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto
+                
+                prose-pre:code:bg-transparent dark:prose-pre:code:bg-transparent
+                prose-pre:code:text-slate-800 dark:prose-pre:code:text-slate-200
+                prose-pre:code:p-0 prose-pre:code:leading-relaxed">
         {{ content }}
     </div>
     
