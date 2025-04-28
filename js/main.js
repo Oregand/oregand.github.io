@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Dark mode toggle
+  initDarkMode();
+
   // Initialize animations
   document.querySelectorAll('.animate-on-scroll').forEach(element => {
     if (isElementInViewport(element)) {
@@ -42,6 +45,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Initialize dark mode
+function initDarkMode() {
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const htmlElement = document.documentElement;
+  
+  // Check for saved user preference in localStorage
+  const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                     (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  
+  // Set initial dark mode state
+  if (isDarkMode) {
+    htmlElement.classList.add('dark');
+  } else {
+    htmlElement.classList.remove('dark');
+  }
+  
+  // Add event listener to toggle button
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+      
+      // Save user preference to localStorage
+      localStorage.setItem('darkMode', htmlElement.classList.contains('dark'));
+    });
+  }
+  
+  // Listen for system preference changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('darkMode')) {
+      if (e.matches) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+    }
+  });
+}
 
 // Function to load blog posts on the homepage
 async function loadFeaturedBlogPosts() {
