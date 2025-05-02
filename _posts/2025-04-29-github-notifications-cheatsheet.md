@@ -15,9 +15,6 @@ Working remotely with access to thousands of repositories is like being invited 
 
 Let's transform GitHub notifications from your daily nemesis into your productivity superpower! 🦸‍♀️
 
-![GitHub Notifications Inbox with multiple notifications](/assets/images/github-notifications/notifications-inbox.png)
-*What your notifications look like now vs. what they could look like with this guide*
-
 ## The Notification Showdown: Web vs. Email
 
 GitHub gives you notifications in two flavors (because one way to be overwhelmed wasn't enough):
@@ -37,8 +34,6 @@ First, find the off switch (or at least the dimmer):
 Settings > Notifications (or just go to github.com/settings/notifications)
 ```
 
-![GitHub Notification Settings Page](/assets/images/github-notifications/notification-settings.png)
-
 #### THE MAGIC SETTINGS (Copy These Exactly!)
 
 - ✅ **Web & Mobile**: ON for both "Participating" and "Watching" (you need *some* notifications)
@@ -55,8 +50,6 @@ Settings > Notifications (or just go to github.com/settings/notifications)
 ### Step 2: Custom Filters That Actually Make Sense 🔍
 
 Welcome to the secret weapon in your notification arsenal:
-
-![GitHub Notifications Filtering Interface](/assets/images/github-notifications/notifications-filters.png)
 
 #### Copy/Paste These Filter Recipes
 
@@ -96,7 +89,6 @@ With thousands of repos, you need a plan. Here's yours:
 - **Setting**: Ignore! Ignore! Ignore!
 - **Reality Check**: You'll still get notifications when someone @mentions you
 
-![Empty Notifications Interface - Goal State](/assets/images/github-notifications/notifications-empty.png)
 *This beautiful emptiness could be yours!*
 
 ### Step 4: Your Daily Notification Ninja Routine 🥷
@@ -117,10 +109,12 @@ With thousands of repos, you need a plan. Here's yours:
 
 #### Ninja Keyboard Shortcuts
 
-- `j` / `k`: Navigate between notifications
-- `e`: Mark as done
-- `s`: Subscribe/Unsubscribe
-- `y`: Remove from list
+- `↑` / `K`: Navigate up through notifications
+- `↓` / `J`: Navigate down through notifications
+- `E`: Mark as done
+- `Shift + I`: Mark as read
+- `Shift + U`: Mark as unread
+- `Shift + M`: Unsubscribe
 - `/`: Focus the search box (fastest way to filter)
 
 ### Step 5: Mobile Mastery for the Remote Worker 📱
@@ -175,9 +169,6 @@ You know you've mastered GitHub notifications when:
 2. Your teammates no longer start messages with "Not sure if you saw my comment..."
 3. You can find any notification faster than you can find matching socks
 4. Your inbox consistently shows fewer than 50 items
-
-![GitHub Welcome Notifications](/assets/images/github-notifications/notifications-welcome.png)
-*Even these welcome notifications will be no match for your new powers!*
 
 ## The Secret Triumph: Information Mastery
 
