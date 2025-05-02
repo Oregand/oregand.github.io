@@ -4,7 +4,7 @@ title: "GitHub Notifications Survival Guide: The Ultimate Cheatsheet"
 date: 2025-04-29
 categories: github productivity
 description: "A fun, practical guide to conquering GitHub notifications and reclaiming your sanity in a remote-first environment with thousands of repositories."
-image: https://images.unsplash.com/photo-1614624532603-9d61cc152992?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
 ---
 
 ## Help! I'm Drowning in GitHub Notifications! 🏊‍♂️
@@ -38,13 +38,12 @@ Settings > Notifications (or just go to github.com/settings/notifications)
 
 - ✅ **Web & Mobile**: ON for both "Participating" and "Watching" (you need *some* notifications)
 - ✅ **Email**: ON for "Participating" only (when someone actually needs you)
-- 🚫 **THE GOLDEN RULE**: Turn OFF "Automatically watch repositories" and "Automatically watch teams"
-  - *This one change will reduce your notifications by 90%. You're welcome.*
+- 🚫 **NOTE**: As of May 18, 2025, GitHub has deprecated the "Automatically watch repositories and teams" settings. This is great news, as this was previously the main source of notification overload!
 
 #### Email Power Moves
 
 - **Email Filtering**: Create a "GitHub can wait" folder
-- **Batching**: Set to "Daily digest email" instead of "Send email for every new notification"
+- **Email Management**: While GitHub doesn't offer a native daily digest feature, you can check https://github.com/github/engineering/discussions for daily updates on GitHub changes
 - **For the Brave**: Toggle "Include your own updates" to OFF (you already know what you did!)
 
 ### Step 2: Custom Filters That Actually Make Sense 🔍
@@ -59,10 +58,10 @@ Welcome to the secret weapon in your notification arsenal:
 4. **"Things on Fire 🔥"**: `reason:security-alert reason:ci-activity state:failure`
 
 #### Create These in 10 Seconds
+
 1. Go to [github.com/notifications](https://github.com/notifications)
 2. Paste the query
-3. Hit the save icon
-4. Name it something that will make you chuckle
+3. Check [the docs](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/viewing-and-triaging-notifications/managing-notifications-from-your-inbox?utm_source=chatgpt.com#customizing-your-inbox-with-custom-filters) for more options!
 
 ### Step 3: The Four-Tier Watching System (Your New Best Friend) 👀
 
@@ -71,7 +70,7 @@ With thousands of repos, you need a plan. Here's yours:
 #### Tier 1: "My Precious" (5-10 repos)
 
 - **What**: Your babies – the repos you actively work on
-- **Setting**: Custom watch with PRs, Issues, Discussions, Security alerts
+- **Setting**: Customized watch settings with PRs, Issues, Discussions, Security alerts
 - **Skip**: Wiki updates (unless you enjoy documentation... said no one ever)
 
 #### Tier 2: "The Cool Kids Club" (10-20 repos)
@@ -121,12 +120,12 @@ With thousands of repos, you need a plan. Here's yours:
 
 For the hammock/coffee shop/couch developer:
 
-1. **GitHub Mobile App**: It's actually good now, I promise
+1. **GitHub Mobile App**: [It's actually good now, I promise](https://github.com/mobile)
 2. **Selective Push Notifications**:
    - ON: @mentions, reviews, assignments (the stuff you can't ignore)
    - OFF: Everything else (your phone battery will thank you)
 3. **Working Hours**: Set quiet hours to preserve your sanity
-4. **Quick Replies**: Master the art of "LGTM 👍" and "I'll look at this tomorrow!"
+4. **Quick Responses**: While the GitHub mobile app doesn't have built-in quick replies, you can manually type short responses like "LGTM 👍" and "I'll look at this tomorrow!"
 
 ## Advanced Hacks for Notification Ninjas 🥷🥷
 
