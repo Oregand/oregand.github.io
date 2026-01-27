@@ -138,8 +138,8 @@ Then visit `http://localhost:4000` in your browser.
 
 Commit and push your changes to GitHub:
 ```bash
-git add _posts/YYYY-MM-DD-your-post.md
-git commit -m "Add new blog post: Your Title"
+git add _posts/2025-04-30-my-new-blog-post.md
+git commit -m "Add new blog post: My New Blog Post"
 git push origin main
 ```
 
@@ -349,10 +349,6 @@ def hello():
 |----------|----------|
 | Cell 1   | Cell 2   |
 ```
-
-## Local Development (Detailed)
-
-See "Task 5: How to Set Up Local Development" in the Common Tasks section above for detailed instructions.
 
 ## Site Structure
 
