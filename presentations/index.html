@@ -1,0 +1,42 @@
+---
+layout: default
+title: Presentations
+description: Slide decks and presentation materials from talks by David O'Regan.
+---
+
+<div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-center mb-4 text-secondary dark:text-gray-100">{{ page.title }}</h1>
+
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+            Slide decks and materials from talks on engineering leadership, AI, and GitHub Copilot.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for presentation in site.data.presentations %}
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-900 flex items-center justify-center">
+                <i class="fas fa-file-pdf text-white text-6xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
+                    <time datetime="{{ presentation.date }}">{{ presentation.date | date: "%b %-d, %Y" }}</time>
+                    {% if presentation.event and presentation.event != "" %}
+                    <span>{{ presentation.event }}</span>
+                    {% endif %}
+                </div>
+                <h2 class="text-xl font-semibold mb-3 text-secondary dark:text-gray-100">
+                    {{ presentation.title }}
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ presentation.description }}</p>
+                <a href="{{ '/assets/presentations/' | append: presentation.file | relative_url }}" 
+                   download
+                   class="inline-flex items-center text-primary dark:text-blue-400 font-medium hover:underline">
+                    <i class="fas fa-download mr-2"></i> Download Slides
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
