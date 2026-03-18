@@ -31,7 +31,7 @@ description: Slide decks and presentation materials from talks by David O'Regan.
                 </h2>
                 <p class="text-gray-600 dark:text-gray-300 mb-4">{{ presentation.description }}</p>
                 <a href="{{ '/assets/presentations/' | append: presentation.file | relative_url }}" 
-                   download
+                   download="{{ presentation.file }}"
                    class="inline-flex items-center text-primary dark:text-blue-400 font-medium hover:underline">
                     <i class="fas fa-download mr-2"></i> Download Slides
                 </a>
