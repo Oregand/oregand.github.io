@@ -1,10 +1,8 @@
 title: David O'Regan
-email: doregan@github.com
 description: >-
-  David O'Regan's personal website and blog - Senior Engineering Manager at GitHub working on Copilot.
+  David O'Regan's personal website and blog — Senior Engineering Manager, Copilot @ GitHub. Based in Seattle.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://oregand.github.io" # the base hostname & protocol for your site
-twitter_username: your-twitter-username
 github_username: oregand
 author: "David O'Regan"
 author_image: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
