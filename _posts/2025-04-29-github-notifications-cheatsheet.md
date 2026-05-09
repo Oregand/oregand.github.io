@@ -4,7 +4,9 @@ title: "GitHub Notifications Survival Guide: The Ultimate Cheatsheet"
 date: 2025-04-29
 categories: github productivity
 description: "A fun, practical guide to conquering GitHub notifications and reclaiming your sanity in a remote-first environment with thousands of repositories."
-image: https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70
+imageAlt: "Phone showing notifications stacking up on the lock screen"
+readTime: "5 min read"
 ---
 
 ## Help! I'm Drowning in GitHub Notifications! 🏊‍♂️

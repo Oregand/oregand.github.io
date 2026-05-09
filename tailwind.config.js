@@ -7,21 +7,12 @@ module.exports = {
     "./js/*.js",
     "./_layouts/**/*.html",
     "./_includes/**/*.html",
+    // Scan posts for class names but ignore code blocks (handled via safelist below if needed).
     "./_posts/**/*.md"
   ],
   theme: {
     extend: {
       colors: {
-        // Legacy aliases mapped to Material 3 tokens for backward compatibility
-        primary: '#0B57D0',
-        secondary: '#1D1B20',
-        textColor: '#1D1B20',
-        lightGray: '#FEF7FF',
-        borderColor: '#CAC4D0',
-        highlight: '#0B57D0',
-        github: '#1D1B20',
-        githubHover: '#322F35',
-
         // Material 3 light scheme
         'md-primary': '#0B57D0',
         'md-on-primary': '#FFFFFF',
@@ -71,7 +62,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Roboto', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['"Google Sans Display"', 'Roboto', 'system-ui', 'sans-serif'],
         mono: ['"Roboto Mono"', '"Fira Code"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       borderRadius: {
@@ -89,6 +79,15 @@ module.exports = {
         'md-3': '0 1px 3px 0 rgba(0,0,0,0.30), 0 4px 8px 3px rgba(0,0,0,0.15)',
         'md-4': '0 2px 3px 0 rgba(0,0,0,0.30), 0 6px 10px 4px rgba(0,0,0,0.15)',
         'md-5': '0 4px 4px 0 rgba(0,0,0,0.30), 0 8px 12px 6px rgba(0,0,0,0.15)',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 600ms ease-out both',
       },
       typography: {
         DEFAULT: {
@@ -144,6 +143,7 @@ module.exports = {
             h2: { fontWeight: '500', letterSpacing: '-0.015em', marginTop: '2.5em', marginBottom: '0.8em' },
             h3: { fontWeight: '500', letterSpacing: '-0.01em', marginTop: '2em', marginBottom: '0.6em' },
             hr: { borderColor: '#E6E0E9', marginTop: '3em', marginBottom: '3em' },
+            img: { borderRadius: '12px' },
           },
         },
         invert: {

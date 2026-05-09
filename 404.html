@@ -1,0 +1,25 @@
+---
+layout: default
+title: Page not found
+description: We couldn't find the page you were looking for.
+permalink: /404.html
+---
+
+<section class="container mx-auto px-4 py-24 text-center max-w-2xl">
+  <p class="text-md-primary dark:text-md-dark-primary text-base font-medium tracking-wider uppercase mb-3">404</p>
+  <h1 class="text-4xl md:text-5xl font-medium mb-4 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">Page not found</h1>
+  <p class="text-lg text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-10">
+    The page you're looking for doesn't exist or may have moved. Try one of the links below.
+  </p>
+  <div class="flex flex-wrap items-center justify-center gap-3">
+    <a href="{{ '/' | relative_url }}" class="md-btn-filled">
+      <i class="fas fa-home" aria-hidden="true"></i> Home
+    </a>
+    <a href="{{ '/blog/' | relative_url }}" class="md-btn-tonal">
+      <i class="fas fa-book-open" aria-hidden="true"></i> Read the blog
+    </a>
+    <a href="https://github.com/oregand" target="_blank" rel="noopener noreferrer" class="md-btn-text">
+      <i class="fab fa-github" aria-hidden="true"></i> GitHub
+    </a>
+  </div>
+</section>

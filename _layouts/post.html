@@ -2,142 +2,190 @@
 layout: default
 ---
 <!-- Reading progress bar -->
-<div id="reading-progress" class="fixed top-0 left-0 right-0 h-0.5 bg-md-primary dark:bg-md-dark-primary z-[60] origin-left scale-x-0 transition-transform duration-150 ease-out"></div>
+<div
+  id="reading-progress"
+  class="fixed left-0 right-0 h-0.5 bg-md-primary dark:bg-md-dark-primary z-[60] origin-left scale-x-0 transition-transform duration-150 ease-out"
+  style="top: env(safe-area-inset-top, 0px);"
+  role="progressbar"
+  aria-label="Reading progress"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="0"></div>
 
 <!-- Hero header with featured image as backdrop -->
 <header class="relative overflow-hidden bg-md-surface-container-low dark:bg-md-dark-surface-container-low border-b border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
-    {% if page.image %}
+  {% if page.image %}
     <div class="absolute inset-0">
-        <img src="{{ page.image }}" alt="" aria-hidden="true" class="w-full h-full object-cover opacity-25 dark:opacity-15">
-        <div class="absolute inset-0 bg-gradient-to-b from-md-surface-container-low/40 via-md-surface-container-low/85 to-md-surface-container-low dark:from-md-dark-surface-container-low/40 dark:via-md-dark-surface-container-low/85 dark:to-md-dark-surface-container-low"></div>
+      <img src="{{ page.image }}" alt="" aria-hidden="true" class="w-full h-full object-cover opacity-25 dark:opacity-15" loading="eager" decoding="async">
+      <div class="absolute inset-0 bg-gradient-to-b from-md-surface-container-low/40 via-md-surface-container-low/85 to-md-surface-container-low dark:from-md-dark-surface-container-low/40 dark:via-md-dark-surface-container-low/85 dark:to-md-dark-surface-container-low"></div>
     </div>
+  {% endif %}
+  <div class="relative container mx-auto px-4 pt-10 pb-12 md:pt-14 md:pb-16 max-w-3xl">
+    <a href="{{ '/blog/' | relative_url }}" class="md-btn-text -ml-3 mb-6">
+      <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i> Back to Blog
+    </a>
+    {% if page.categories %}
+      <div class="flex flex-wrap gap-2 mb-5">
+        {% for category in page.categories %}
+          <span class="md-chip-assist">{{ category }}</span>
+        {% endfor %}
+      </div>
     {% endif %}
-    <div class="relative container mx-auto px-4 pt-10 pb-12 md:pt-14 md:pb-16 max-w-3xl">
-        <a href="{{ '/blog/' | relative_url }}" class="md-btn-text -ml-3 mb-6">
-            <i class="fas fa-arrow-left text-sm"></i> Back to Blog
-        </a>
-        {% if page.categories %}
-        <div class="flex flex-wrap gap-2 mb-5">
-            {% for category in page.categories %}
-            <span class="md-chip-assist">{{ category }}</span>
-            {% endfor %}
-        </div>
-        {% endif %}
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-5 text-md-on-surface dark:text-md-dark-on-surface tracking-tight leading-[1.1]">
-            {{ page.title }}
-        </h1>
-        {% if page.description %}
-        <p class="text-lg md:text-xl text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-7 leading-relaxed max-w-2xl">
-            {{ page.description }}
-        </p>
-        {% endif %}
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
-            <div class="flex items-center">
-                <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}"
-                     class="w-9 h-9 rounded-full mr-2 ring-2 ring-md-surface dark:ring-md-dark-surface">
-                <span class="font-medium text-md-on-surface dark:text-md-dark-on-surface">{{ page.author | default: site.author }}</span>
-            </div>
-            <span aria-hidden="true">·</span>
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-            {% if page.readTime %}
-            <span aria-hidden="true">·</span>
-            <span>{{ page.readTime }}</span>
-            {% endif %}
-        </div>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-5 text-md-on-surface dark:text-md-dark-on-surface tracking-tight leading-[1.15]">
+      {{ page.title }}
+    </h1>
+    {% if page.description %}
+      <p class="text-lg md:text-xl text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-7 leading-relaxed max-w-2xl">
+        {{ page.description }}
+      </p>
+    {% endif %}
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
+      <div class="flex items-center">
+        <img
+          src="{{ page.authorImage | default: site.author_image }}"
+          alt=""
+          aria-hidden="true"
+          width="36"
+          height="36"
+          class="w-9 h-9 rounded-full mr-2 ring-2 ring-md-surface dark:ring-md-dark-surface">
+        <span class="font-medium text-md-on-surface dark:text-md-dark-on-surface">{{ page.author | default: site.author }}</span>
+      </div>
+      <span aria-hidden="true">·</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.readTime %}
+        <span aria-hidden="true">·</span>
+        <span>{{ page.readTime }}</span>
+      {% endif %}
     </div>
+  </div>
 </header>
 
 <!-- Article body -->
 <article class="container mx-auto px-4 -mt-8 md:-mt-12 mb-16 max-w-3xl relative">
-    <div class="md-card bg-md-surface-container-lowest dark:bg-md-dark-surface-container-lowest shadow-md-1 px-6 py-10 md:px-12 md:py-14 rounded-md-lg">
-        <div class="prose prose-lg max-w-none dark:prose-invert
-                    prose-headings:font-medium prose-headings:tracking-tight
-                    prose-h2:text-3xl prose-h3:text-2xl
-                    prose-img:rounded-md-md prose-img:my-8
-                    prose-pre:rounded-md-md
-                    prose-code:font-mono prose-code:before:content-none prose-code:after:content-none">
-            {{ content }}
-        </div>
+  <div class="bg-md-surface-container-lowest dark:bg-md-dark-surface-container-lowest shadow-md-1 px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-14 rounded-md-lg">
+    <div class="prose prose-base sm:prose-lg max-w-none dark:prose-invert
+                prose-headings:font-medium prose-headings:tracking-tight
+                prose-h2:text-2xl sm:prose-h2:text-3xl
+                prose-h3:text-xl sm:prose-h3:text-2xl
+                prose-img:rounded-md-md prose-img:my-8
+                prose-pre:rounded-md-md prose-pre:overflow-x-auto
+                prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+                prose-a:text-md-primary dark:prose-a:text-md-dark-primary">
+      {{ content }}
     </div>
+  </div>
 
-    <!-- Author footer -->
-    <div class="mt-10 md-card-outlined p-6 md:p-8">
-        <div class="flex flex-col sm:flex-row items-start gap-5">
-            <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}"
-                 class="w-16 h-16 rounded-full ring-2 ring-md-outline-variant dark:ring-md-dark-outline-variant shrink-0">
-            <div class="flex-1">
-                <p class="text-xs uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-1">Written by</p>
-                <h3 class="text-lg font-medium mb-2 text-md-on-surface dark:text-md-dark-on-surface">{{ page.author | default: site.author }}</h3>
-                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant leading-relaxed">
-                    Senior Engineering Manager, Copilot @ GitHub. Background in frontend engineering, now leading high-impact AI/ML teams. Based in Seattle, Washington.
-                </p>
-                <div class="flex items-center gap-2 mt-4">
-                    <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-btn-tonal">
-                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                    </a>
-                    <a href="https://github.com/Oregand" target="_blank" rel="noopener" class="md-btn-text">
-                        <i class="fab fa-github"></i> Follow on GitHub
-                    </a>
-                </div>
-            </div>
+  <!-- Author footer -->
+  <div class="mt-10 md-card-outlined p-6 md:p-8">
+    <div class="flex flex-col sm:flex-row items-start gap-5">
+      <img
+        src="{{ page.authorImage | default: site.author_image }}"
+        alt="Portrait of {{ page.author | default: site.author }}"
+        width="64"
+        height="64"
+        loading="lazy"
+        decoding="async"
+        class="w-16 h-16 rounded-full ring-2 ring-md-outline-variant dark:ring-md-dark-outline-variant shrink-0">
+      <div class="flex-1">
+        <p class="text-xs uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-1">Written by</p>
+        <h2 class="text-lg font-medium mb-2 text-md-on-surface dark:text-md-dark-on-surface">{{ page.author | default: site.author }}</h2>
+        <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant leading-relaxed">
+          Senior Engineering Manager, Copilot @ GitHub. Background in frontend engineering, now leading high-impact AI/ML teams. Based in Seattle, Washington.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 mt-4">
+          <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener noreferrer" class="md-btn-tonal">
+            <i class="fab fa-linkedin" aria-hidden="true"></i> Connect on LinkedIn
+          </a>
+          <a href="https://github.com/oregand" target="_blank" rel="noopener noreferrer" class="md-btn-text">
+            <i class="fab fa-github" aria-hidden="true"></i> Follow on GitHub
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </article>
 
-<!-- Related posts -->
-<section class="bg-md-surface-container-low dark:bg-md-dark-surface-container-low py-16 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
-    <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-2xl md:text-3xl font-medium mb-8 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">Keep reading</h2>
+<!-- Related posts (filtered by first category if available) -->
+{% assign related = site.posts | where_exp: "p", "p.url != page.url" %}
+{% if page.categories %}
+  {% assign category_filter = page.categories | first %}
+  {% assign categorised = related | where_exp: "p", "p.categories contains category_filter" %}
+  {% if categorised.size > 0 %}{% assign related = categorised %}{% endif %}
+{% endif %}
+{% assign related = related | slice: 0, 3 %}
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% assign maxRelated = 3 %}
-            {% assign relatedCount = 0 %}
-            {% for post in site.posts %}
-                {% if post.url != page.url and relatedCount < maxRelated %}
-                    <article class="md-card-elevated flex flex-col">
-                        <a href="{{ post.url | relative_url }}" class="block">
-                            <div class="h-48 bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden">
-                                <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                            </div>
-                        </a>
-                        <div class="p-6 flex flex-col flex-1">
-                            <div class="flex justify-between items-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
-                                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-                                {% if post.readTime %}<span>{{ post.readTime }}</span>{% endif %}
-                            </div>
-                            <a href="{{ post.url | relative_url }}" class="block">
-                                <h3 class="text-xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">
-                                    {{ post.title }}
-                                </h3>
-                            </a>
-                            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1 line-clamp-3">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-                            <a href="{{ post.url | relative_url }}" class="md-btn-text self-start -ml-3">
-                                Read more <i class="fas fa-arrow-right text-sm"></i>
-                            </a>
-                        </div>
-                    </article>
-                    {% assign relatedCount = relatedCount | plus: 1 %}
-                {% endif %}
-            {% endfor %}
-        </div>
+{% if related.size > 0 %}
+<section class="bg-md-surface-container-low dark:bg-md-dark-surface-container-low py-16 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-2xl md:text-3xl font-medium mb-8 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">Keep reading</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in related %}
+        <article class="md-card-elevated overflow-hidden flex flex-col group transition-transform hover:-translate-y-1">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}" class="block aspect-[16/9] bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden" tabindex="-1" aria-hidden="true">
+              <img
+                src="{{ post.image }}"
+                alt=""
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+            </a>
+          {% endif %}
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+              {% if post.readTime %}<span aria-hidden="true">·</span><span>{{ post.readTime }}</span>{% endif %}
+            </div>
+            <h3 class="text-xl font-medium mb-3 leading-snug">
+              <a href="{{ post.url | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors focus:outline-none focus-visible:underline">
+                {{ post.title }}
+              </a>
+            </h3>
+            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1 line-clamp-3">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <a href="{{ post.url | relative_url }}" class="md-btn-text self-start -ml-3" aria-label="Read more about {{ post.title | escape }}">
+              Read more <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
     </div>
+  </div>
 </section>
+{% endif %}
 
 <script>
-  // Reading progress bar
+  // Reading progress bar (per-post layout)
   (function () {
     var bar = document.getElementById('reading-progress');
     var article = document.querySelector('article .prose');
     if (!bar || !article) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) bar.style.transition = 'none';
+    var rafQueued = false;
     function update() {
+      rafQueued = false;
       var rect = article.getBoundingClientRect();
       var total = article.offsetHeight - window.innerHeight;
+      if (total <= 0) {
+        bar.style.transform = 'scaleX(0)';
+        bar.setAttribute('aria-valuenow', '0');
+        return;
+      }
       var scrolled = -rect.top;
-      var pct = Math.max(0, Math.min(1, scrolled / Math.max(total, 1)));
+      var pct = Math.max(0, Math.min(1, scrolled / total));
       bar.style.transform = 'scaleX(' + pct + ')';
+      bar.setAttribute('aria-valuenow', String(Math.round(pct * 100)));
     }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
+    function onScroll() {
+      if (rafQueued) return;
+      rafQueued = true;
+      window.requestAnimationFrame(update);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     update();
   })();
 </script>

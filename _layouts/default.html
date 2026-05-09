@@ -1,120 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <script>
-      // Inline theme bootstrap to prevent flash of incorrect theme.
-      (function () {
-        try {
-          var stored = localStorage.getItem('darkMode');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          var isDark = stored === 'true' || (stored === null && prefersDark);
-          if (isDark) document.documentElement.classList.add('dark');
-        } catch (e) {}
-      })();
-    </script>
-    <link rel="stylesheet" href="{{ '/css/output.css' | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="{{ '/js/main.js' | relative_url }}" defer></script>
-    {% feed_meta %}
-    {% seo title=false %}
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% include head.html %}
 </head>
-<body class="bg-md-surface dark:bg-md-dark-surface text-md-on-surface dark:text-md-dark-on-surface transition-colors duration-300 font-sans">
-    <!-- Top app bar -->
-    <nav class="md-app-bar">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <a href="{{ '/' | relative_url }}" class="text-lg font-medium text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ site.title }}</a>
-                
-                <div class="hidden md:flex items-center space-x-2">
-                    <a href="{{ '/' | relative_url }}" class="md-nav-link {% if page.url == '/' %}md-nav-link-active{% endif %} px-3">Home</a>
-                    <a href="{{ '/#about' | relative_url }}" class="md-nav-link px-3">About</a>
-                    <a href="{{ '/#experience' | relative_url }}" class="md-nav-link px-3">Experience</a>
-                    <a href="{{ '/#skills' | relative_url }}" class="md-nav-link px-3">Skills</a>
-                    <a href="{{ '/#github-updates' | relative_url }}" class="md-nav-link px-3">Copilot Updates</a>
-                    <a href="{{ '/blog/' | relative_url }}" class="md-nav-link {% if page.url contains '/blog/' %}md-nav-link-active{% endif %} px-3">Blog</a>
-                    <a href="{{ '/presentations/' | relative_url }}" class="md-nav-link {% if page.url contains '/presentations/' %}md-nav-link-active{% endif %} px-3">Presentations</a>
-                </div>
+<body class="bg-md-surface dark:bg-md-dark-surface text-md-on-surface dark:text-md-dark-on-surface transition-colors duration-300 font-sans antialiased">
+  {% include skip-link.html %}
+  {% include nav.html %}
 
-                <div class="flex items-center space-x-1">
-                    <!-- Dark mode toggle -->
-                    <button id="dark-mode-toggle" class="md-icon-btn" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon dark:hidden text-lg"></i>
-                        <i class="fas fa-sun hidden dark:block text-lg"></i>
-                    </button>
-
-                    <!-- Mobile menu button -->
-                    <button id="mobile-menu-btn" class="md-icon-btn md:hidden" aria-label="Open menu">
-                        <i class="fas fa-bars text-lg"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
-                <a href="{{ '/' | relative_url }}" class="block py-2 md-nav-link">Home</a>
-                <a href="{{ '/#about' | relative_url }}" class="block py-2 md-nav-link">About</a>
-                <a href="{{ '/#experience' | relative_url }}" class="block py-2 md-nav-link">Experience</a>
-                <a href="{{ '/#skills' | relative_url }}" class="block py-2 md-nav-link">Skills</a>
-                <a href="{{ '/#github-updates' | relative_url }}" class="block py-2 md-nav-link">Copilot Updates</a>
-                <a href="{{ '/blog/' | relative_url }}" class="block py-2 md-nav-link {% if page.url contains '/blog/' %}md-nav-link-active{% endif %}">Blog</a>
-                <a href="{{ '/presentations/' | relative_url }}" class="block py-2 md-nav-link {% if page.url contains '/presentations/' %}md-nav-link-active{% endif %}">Presentations</a>
-            </div>
-        </div>
-    </nav>
-
+  <main id="main-content" tabindex="-1">
     {{ content }}
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-md-surface-container dark:bg-md-dark-surface-container text-md-on-surface dark:text-md-dark-on-surface py-12 mt-16 transition-colors duration-300 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <h3 class="text-xl font-medium mb-3 tracking-tight">{{ site.title }}</h3>
-                    <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
-                        Senior Engineering Manager at GitHub working on Copilot. Passionate about AI, engineering leadership, and building great teams.
-                    </p>
-                    <div class="flex space-x-1">
-                        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" class="md-icon-btn" aria-label="GitHub">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-icon-btn" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://gitlab.com/oregand" target="_blank" rel="noopener" class="md-icon-btn" aria-label="GitLab">
-                            <i class="fab fa-gitlab text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Navigation</h3>
-                    <ul class="space-y-2">
-                        <li><a href="{{ '/' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Home</a></li>
-                        <li><a href="{{ '/#about' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">About</a></li>
-                        <li><a href="{{ '/#experience' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Experience</a></li>
-                        <li><a href="{{ '/#skills' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Skills</a></li>
-                        <li><a href="{{ '/#github-updates' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Copilot Updates</a></li>
-                        <li><a href="{{ '/blog/' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Blog</a></li>
-                        <li><a href="{{ '/presentations/' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Presentations</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Location</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center text-md-on-surface dark:text-md-dark-on-surface">
-                            <i class="fas fa-map-marker-alt w-6 text-md-on-surface-variant dark:text-md-dark-on-surface-variant"></i>
-                            <span>Seattle, Washington, United States</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-10 pt-6 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60 text-center text-sm text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
-                <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  {% include footer.html %}
 </body>
 </html>

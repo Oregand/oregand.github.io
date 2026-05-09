@@ -4,7 +4,9 @@ title: "Building an AI Navigator for GitHub's The Hub Documentation"
 date: 2025-04-28
 categories: ai github documentation productivity
 description: "How I created an AI-powered application to help new hires efficiently navigate GitHub's extensive internal documentation repository."
-image: https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70
+imageAlt: "Open book with pages turning, representing documentation"
+readTime: "6 min read"
 ---
 
 ## The Challenge of Internal Documentation

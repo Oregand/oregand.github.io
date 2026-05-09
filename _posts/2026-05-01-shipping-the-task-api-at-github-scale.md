@@ -4,7 +4,9 @@ title: "Shipping the Task API at GitHub Scale: A Success Story in Agentic APIs"
 date: 2026-05-01
 categories: ai engineering-leadership copilot
 description: "How we designed, built and released the Task API behind GitHub Copilot's agent — and what it taught us about running an agentic API at the scale of GitHub."
-image: https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70
+imageAlt: "Glowing circuit board patterns, evoking large-scale infrastructure"
+readTime: "9 min read"
 ---
 
 ## The thing nobody warns you about agentic APIs

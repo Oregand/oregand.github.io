@@ -1,0 +1,51 @@
+{% assign home_url = '/' | relative_url %}
+{% assign blog_url = '/blog/' | relative_url %}
+{% assign presentations_url = '/presentations/' | relative_url %}
+{% assign is_home = false %}{% if page.url == '/' or page.url == '/index.html' %}{% assign is_home = true %}{% endif %}
+{% assign is_blog = false %}{% if page.url contains '/blog' %}{% assign is_blog = true %}{% endif %}
+{% assign is_presentations = false %}{% if page.url contains '/presentations' %}{% assign is_presentations = true %}{% endif %}
+
+<nav id="site-nav" class="md-app-bar" aria-label="Primary">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center gap-2">
+      <a href="{{ home_url }}" class="text-lg font-medium text-md-on-surface dark:text-md-dark-on-surface tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-md-primary rounded-md-xs px-1">
+        {{ site.title }}
+      </a>
+
+      <div class="hidden lg:flex items-center space-x-1">
+        <a href="{{ home_url }}" class="md-nav-link {% if is_home %}md-nav-link-active{% endif %} px-3"{% if is_home %} aria-current="page"{% endif %}>Home</a>
+        {% if is_home %}
+          <a href="#about" class="md-nav-link px-3">About</a>
+          <a href="#experience" class="md-nav-link px-3">Experience</a>
+          <a href="#skills" class="md-nav-link px-3">Skills</a>
+          <a href="#github-updates" class="md-nav-link px-3">Copilot Updates</a>
+        {% endif %}
+        <a href="{{ blog_url }}" class="md-nav-link {% if is_blog %}md-nav-link-active{% endif %} px-3"{% if is_blog %} aria-current="page"{% endif %}>Blog</a>
+        <a href="{{ presentations_url }}" class="md-nav-link {% if is_presentations %}md-nav-link-active{% endif %} px-3"{% if is_presentations %} aria-current="page"{% endif %}>Presentations</a>
+      </div>
+
+      <div class="flex items-center gap-1">
+        <button id="dark-mode-toggle" type="button" class="md-icon-btn" aria-label="Switch to dark mode" aria-pressed="false">
+          <i class="fas fa-moon dark:hidden text-lg" aria-hidden="true"></i>
+          <i class="fas fa-sun hidden dark:block text-lg" aria-hidden="true"></i>
+        </button>
+
+        <button id="mobile-menu-btn" type="button" class="md-icon-btn lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden hidden pt-3 pb-2" role="region" aria-label="Mobile navigation">
+      <a href="{{ home_url }}" class="block min-h-12 flex items-center px-3 md-nav-link {% if is_home %}md-nav-link-active{% endif %}"{% if is_home %} aria-current="page"{% endif %}>Home</a>
+      {% if is_home %}
+        <a href="#about" class="block min-h-12 flex items-center px-3 md-nav-link">About</a>
+        <a href="#experience" class="block min-h-12 flex items-center px-3 md-nav-link">Experience</a>
+        <a href="#skills" class="block min-h-12 flex items-center px-3 md-nav-link">Skills</a>
+        <a href="#github-updates" class="block min-h-12 flex items-center px-3 md-nav-link">Copilot Updates</a>
+      {% endif %}
+      <a href="{{ blog_url }}" class="block min-h-12 flex items-center px-3 md-nav-link {% if is_blog %}md-nav-link-active{% endif %}"{% if is_blog %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ presentations_url }}" class="block min-h-12 flex items-center px-3 md-nav-link {% if is_presentations %}md-nav-link-active{% endif %}"{% if is_presentations %} aria-current="page"{% endif %}>Presentations</a>
+    </div>
+  </div>
+</nav>
