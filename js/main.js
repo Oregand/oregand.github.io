@@ -119,14 +119,14 @@
     if (!els.length) return;
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-      els.forEach(function (el) { el.classList.add('animate-fade-in'); });
+      els.forEach(function (el) { el.classList.add('is-visible'); });
       return;
     }
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       });
