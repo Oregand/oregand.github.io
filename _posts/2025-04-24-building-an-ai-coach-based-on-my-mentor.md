@@ -4,7 +4,9 @@ title: "Building an AI Coach Based on My Mentor's Communication Style"
 date: 2025-04-24
 categories: ai productivity mentorship
 description: "How I created an AI assistant that helps me communicate like my mentor Michelle Gill by fine-tuning Claude on her most brilliant comments."
-image: https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70
+imageAlt: "Two people in conversation across a desk"
+readTime: "7 min read"
 ---
 
 ## The Challenge of Clear Communication

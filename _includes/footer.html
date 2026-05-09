@@ -1,0 +1,56 @@
+{% assign home_url = '/' | relative_url %}
+{% assign blog_url = '/blog/' | relative_url %}
+{% assign presentations_url = '/presentations/' | relative_url %}
+{% assign is_home = false %}{% if page.url == '/' or page.url == '/index.html' %}{% assign is_home = true %}{% endif %}
+
+<footer class="bg-md-surface-container-high dark:bg-md-dark-surface-container text-md-on-surface dark:text-md-dark-on-surface py-12 mt-16 transition-colors duration-300 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <h3 class="text-xl font-medium mb-3 tracking-tight">{{ site.title }}</h3>
+        <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant max-w-md">
+          Senior Engineering Manager, Copilot @ GitHub. Passionate about AI, engineering leadership, and building great teams.
+        </p>
+        <div class="flex flex-wrap gap-1">
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="md-icon-btn" aria-label="GitHub profile">
+            <i class="fab fa-github text-xl" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" class="md-icon-btn" aria-label="LinkedIn profile">
+            <i class="fab fa-linkedin text-xl" aria-hidden="true"></i>
+          </a>
+          <a href="https://gitlab.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="md-icon-btn" aria-label="GitLab profile">
+            <i class="fab fa-gitlab text-xl" aria-hidden="true"></i>
+          </a>
+          <a href="{{ '/feed.xml' | relative_url }}" class="md-icon-btn" aria-label="RSS feed">
+            <i class="fas fa-rss text-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Navigation</h3>
+        <ul class="space-y-2">
+          <li><a href="{{ home_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Home</a></li>
+          {% if is_home %}
+          <li><a href="#about" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">About</a></li>
+          <li><a href="#experience" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Experience</a></li>
+          <li><a href="#skills" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Skills</a></li>
+          {% endif %}
+          <li><a href="{{ blog_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Blog</a></li>
+          <li><a href="{{ presentations_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Presentations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Location</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center text-md-on-surface dark:text-md-dark-on-surface">
+            <i class="fas fa-map-marker-alt w-6 text-md-on-surface-variant dark:text-md-dark-on-surface-variant" aria-hidden="true"></i>
+            <span>Seattle, Washington, United States</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60 text-center text-sm text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

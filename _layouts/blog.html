@@ -3,34 +3,50 @@ layout: default
 ---
 
 <div class="container mx-auto px-4 py-12">
-    <h1 class="text-4xl md:text-5xl font-medium text-center mb-10 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ page.title }}</h1>
+  <header class="text-center mb-10 max-w-2xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="text-lg text-md-on-surface-variant dark:text-md-dark-on-surface-variant">{{ page.description }}</p>
+    {% endif %}
+  </header>
 
-    {{ content }}
+  {{ content }}
 
+  {% if site.posts.size > 0 %}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        {% for post in site.posts %}
-        <article class="md-card-elevated flex flex-col">
-            <a href="{{ post.url | relative_url }}" class="block">
-                <div class="h-48 bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden">
-                    <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover">
-                </div>
+      {% for post in site.posts %}
+        <article class="md-card-elevated overflow-hidden flex flex-col group transition-transform hover:-translate-y-1">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}" class="block aspect-[16/9] bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden" tabindex="-1" aria-hidden="true">
+              <img
+                src="{{ post.image }}"
+                alt=""
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </a>
-            <div class="p-6 flex flex-col flex-1">
-                <div class="flex justify-between items-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
-                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-                    {% if post.readTime %}<span>{{ post.readTime }}</span>{% endif %}
-                </div>
-                <a href="{{ post.url | relative_url }}" class="block">
-                    <h2 class="text-xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">
-                        {{ post.title }}
-                    </h2>
-                </a>
-                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-                <a href="{{ post.url | relative_url }}" class="md-btn-text self-start">
-                    Read more <i class="fas fa-arrow-right text-sm"></i>
-                </a>
+          {% endif %}
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+              {% if post.readTime %}<span aria-hidden="true">·</span><span>{{ post.readTime }}</span>{% endif %}
             </div>
+            <h2 class="text-xl font-medium mb-3 leading-snug">
+              <a href="{{ post.url | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors focus:outline-none focus-visible:underline">
+                {{ post.title }}
+              </a>
+            </h2>
+            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <a href="{{ post.url | relative_url }}" class="md-btn-text self-start" aria-label="Read more about {{ post.title | escape }}">
+              Read more <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+            </a>
+          </div>
         </article>
-        {% endfor %}
+      {% endfor %}
     </div>
+  {% else %}
+    <p class="text-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant mt-10">No posts published yet — check back soon.</p>
+  {% endif %}
 </div>

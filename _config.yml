@@ -1,32 +1,46 @@
 title: David O'Regan
 description: >-
-  David O'Regan's personal website and blog — Senior Engineering Manager, Copilot @ GitHub. Based in Seattle.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://oregand.github.io" # the base hostname & protocol for your site
+  David O'Regan — Senior Engineering Manager, Copilot @ GitHub. Personal site and blog on AI engineering, leadership, and developer tooling. Based in Seattle.
+baseurl: ""
+url: "https://oregand.github.io"
 github_username: oregand
+linkedin_username: oregand7
 author: "David O'Regan"
 author_image: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+logo: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+
+# Theme color used by browsers for chrome.
+theme_color_light: "#0B57D0"
+theme_color_dark: "#A6C8FF"
+
+# Show future-dated posts in the build (used for scheduled posts).
+future: true
 
 # Build settings
 markdown: kramdown
-permalink: /blog/:title/
 show_excerpts: true
 
-# GitHub Pages settings
-remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-remote-theme
 
-# Collections - for different content types
+# Social profile links for jekyll-seo-tag JSON-LD output.
+social:
+  name: "David O'Regan"
+  links:
+    - https://github.com/oregand
+    - https://www.linkedin.com/in/oregand7
+    - https://gitlab.com/oregand
+
+twitter:
+  card: summary_large_image
+
 collections:
   posts:
     output: true
     permalink: /blog/:title/
 
-# Default front matter
 defaults:
   - scope:
       path: ""
@@ -46,3 +60,10 @@ exclude:
   - node_modules/
   - vendor/
   - README.md
+  - package.json
+  - package-lock.json
+  - postcss.config.js
+  - tailwind.config.js
+  - css/styles.css
+  - scripts/
+  - .github/

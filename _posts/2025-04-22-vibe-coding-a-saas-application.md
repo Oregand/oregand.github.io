@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Vibe Coding A SaaS Application"
+title: "Vibe Coding a SaaS Application"
 date: 2025-04-22
 author: "David O'Regan"
 authorImage: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"

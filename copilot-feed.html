@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,195 +5,229 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub Copilot Updates</title>
   <style>
+    :root {
+      color-scheme: light dark;
+      --bg: transparent;
+      --fg: #1D1B20;
+      --muted: #49454F;
+      --link: #0B57D0;
+      --border: #CAC4D0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #E6E1E5;
+        --muted: #CAC4D0;
+        --link: #A6C8FF;
+        --border: #49454F;
+      }
+    }
+    html.dark {
+      --fg: #E6E1E5;
+      --muted: #CAC4D0;
+      --link: #A6C8FF;
+      --border: #49454F;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: var(--fg);
+      background: var(--bg);
       max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+      margin: 0;
+      padding: 16px 20px;
     }
-    
     h1 {
-      color: #0366d6;
-      border-bottom: 1px solid #eaecef;
+      color: var(--fg);
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      border-bottom: 1px solid var(--border);
       padding-bottom: 10px;
+      margin-top: 0;
     }
-    
     .feed-item {
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       padding-bottom: 20px;
-      border-bottom: 1px solid #eaecef;
+      border-bottom: 1px solid var(--border);
     }
-    
-    .feed-title {
-      margin-bottom: 10px;
-    }
-    
+    .feed-item:last-of-type { border-bottom: none; }
+    .feed-title { margin-bottom: 6px; }
     .feed-title a {
-      color: #0366d6;
+      color: var(--link);
       text-decoration: none;
-      font-weight: bold;
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 1.05rem;
     }
-    
-    .feed-title a:hover {
-      text-decoration: underline;
-    }
-    
+    .feed-title a:hover,
+    .feed-title a:focus-visible { text-decoration: underline; }
     .feed-date {
-      color: #586069;
-      font-size: 14px;
-      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
     }
-    
     .feed-description {
-      color: #24292e;
+      color: var(--fg);
     }
-    
+    .feed-description p { margin-top: 8px; }
+    .feed-description a { color: var(--link); }
     .update-info {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #586069;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
       font-style: italic;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <h1>GitHub Copilot Latest Updates</h1>
+  <h1>GitHub Copilot — latest updates</h1>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1" target="_blank">Upcoming deprecation of Grok Code Fast 1</a>
+      <a href="https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1" target="_blank" rel="noopener noreferrer">Upcoming deprecation of Grok Code Fast 1</a>
     </div>
     <div class="feed-date">May 8, 2026</div>
     <div class="feed-description">
-      We will deprecate Grok Code Fast 1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 15th: Model Deprecation date&#8230;
-The post Upcoming deprecation of Grok Code Fast 1 appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1" target="_blank">Read more →</a></p>
+      We will deprecate Grok Code Fast 1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 15th.
+      <p><a href="https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api" target="_blank">Copilot code review comment types now in usage metrics API</a>
+      <a href="https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api" target="_blank" rel="noopener noreferrer">Copilot code review comment types now in usage metrics API</a>
     </div>
     <div class="feed-date">May 8, 2026</div>
     <div class="feed-description">
-      To help you understand the activity generated by Copilot code review users, the Copilot usage metrics API now breaks down Copilot code review suggestions by comment type. A new copilot_suggestions_by_comment_type&#8230;
-The post Copilot code review comment types now in usage metrics API appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api" target="_blank">Read more →</a></p>
+      The Copilot usage metrics API now breaks down Copilot code review suggestions by comment type, helping you understand the activity generated by reviewers.
+      <p><a href="https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent" target="_blank">More flexible secrets and variables for Copilot cloud agent</a>
+      <a href="https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent" target="_blank" rel="noopener noreferrer">More flexible secrets and variables for Copilot cloud agent</a>
     </div>
     <div class="feed-date">May 8, 2026</div>
     <div class="feed-description">
-      When you delegate a task to Copilot cloud agent, it works in the background in its own development environment powered by GitHub Actions. You can pass secrets and variables to&#8230;
-The post More flexible secrets and variables for Copilot cloud agent appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent" target="_blank">Read more →</a></p>
+      When you delegate a task to Copilot cloud agent it works in the background in its own GitHub Actions environment. You can now pass a wider range of secrets and variables to it.
+      <p><a href="https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1" target="_blank">Upcoming deprecation of GPT-4.1</a>
+      <a href="https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1" target="_blank" rel="noopener noreferrer">Upcoming deprecation of GPT-4.1</a>
     </div>
     <div class="feed-date">May 8, 2026</div>
     <div class="feed-description">
-      We will deprecate the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on 6/1/2026: Model Deprecation date Suggested alternative&#8230;
-The post Upcoming deprecation of GPT-4.1 appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1" target="_blank">Read more →</a></p>
+      GPT-4.1 will be deprecated across all GitHub Copilot experiences (Copilot Chat, inline edits, ask and agent modes, and code completions) on June 1, 2026.
+      <p><a href="https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated" target="_blank">Claude Sonnet 4 deprecated</a>
+      <a href="https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated" target="_blank" rel="noopener noreferrer">Claude Sonnet 4 deprecated</a>
     </div>
     <div class="feed-date">May 7, 2026</div>
     <div class="feed-description">
-      We have deprecated the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 6, 2026. Model Deprecation date&#8230;
-The post Claude Sonnet 4 deprecated appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated" target="_blank">Read more →</a></p>
+      Claude Sonnet 4 has been deprecated across all GitHub Copilot experiences as of May 6, 2026.
+      <p><a href="https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models" target="_blank">Rubber Duck in GitHub Copilot CLI now supports more models</a>
+      <a href="https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models" target="_blank" rel="noopener noreferrer">Rubber Duck in GitHub Copilot CLI now supports more models</a>
     </div>
     <div class="feed-date">May 7, 2026</div>
     <div class="feed-description">
-      Rubber Duck, the cross-family review agent in GitHub Copilot CLI, is now available using a Claude-powered critic agent when your session is using a GPT model. For sessions using Claude&#8230;
-The post Rubber Duck in GitHub Copilot CLI now supports more models appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models" target="_blank">Read more →</a></p>
+      Rubber Duck, the cross-family review agent in GitHub Copilot CLI, is now available using a Claude-powered critic agent when your session is using a GPT model — and vice versa.
+      <p><a href="https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview" target="_blank">Enterprise-managed plugins in GitHub Copilot CLI are now in public preview</a>
+      <a href="https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview" target="_blank" rel="noopener noreferrer">Enterprise-managed plugins in GitHub Copilot CLI are now in public preview</a>
     </div>
     <div class="feed-date">May 6, 2026</div>
     <div class="feed-description">
-      Enterprise administrators can now configure and distribute plugins to GitHub Copilot CLI users across their enterprise. Set baseline standards for your enterprise and make them available in every user&#8217;s Copilot&#8230;
-The post Enterprise-managed plugins in GitHub Copilot CLI are now in public preview appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview" target="_blank">Read more →</a></p>
+      Enterprise administrators can now configure and distribute plugins to GitHub Copilot CLI users across their enterprise.
+      <p><a href="https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases" target="_blank">GitHub Copilot in Visual Studio Code, April releases</a>
+      <a href="https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases" target="_blank" rel="noopener noreferrer">GitHub Copilot in Visual Studio Code — April releases</a>
     </div>
     <div class="feed-date">May 6, 2026</div>
     <div class="feed-description">
-      VS Code moved to weekly stable releases. This changelog covers releases v1.116 through v1.119, the releases we shipped throughout April and early May 2026. Copilot can now search by meaning&#8230;
-The post GitHub Copilot in Visual Studio Code, April releases appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases" target="_blank">Read more →</a></p>
+      VS Code moved to weekly stable releases. This changelog covers releases v1.116 through v1.119, the releases shipped throughout April and early May 2026.
+      <p><a href="https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex" target="_blank">Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex</a>
+      <a href="https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex" target="_blank" rel="noopener noreferrer">Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex</a>
     </div>
     <div class="feed-date">May 1, 2026</div>
     <div class="feed-description">
-      We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions), with the exception of GPT-5.2-Codex in Copilot&#8230;
-The post Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex" target="_blank">Read more →</a></p>
+      We will deprecate GPT-5.2 and GPT-5.2-Codex across most GitHub Copilot experiences, with the exception of GPT-5.2-Codex in Copilot Coding Agent.
+      <p><a href="https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
   <div class="feed-item">
     <div class="feed-title">
-      <a href="https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update" target="_blank">GitHub Copilot in Visual Studio — April update</a>
+      <a href="https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update" target="_blank" rel="noopener noreferrer">GitHub Copilot in Visual Studio — April update</a>
     </div>
     <div class="feed-date">April 30, 2026</div>
     <div class="feed-description">
-      The April 2026 update to Visual Studio centers on agentic workflows: cloud agent sessions launch directly from the IDE, custom agents gain user-level support, and a new Debugger agent validates&#8230;
-The post GitHub Copilot in Visual Studio — April update appeared first on The GitHub Blog.
-
-      <p><a href="https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update" target="_blank">Read more →</a></p>
+      The April 2026 update to Visual Studio centers on agentic workflows: cloud agent sessions launch directly from the IDE, custom agents gain user-level support, and a new Debugger agent validates fixes.
+      <p><a href="https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update" target="_blank" rel="noopener noreferrer">Read more →</a></p>
     </div>
   </div>
 
-  <div class="update-info">
-    Feed last updated: May 9, 2026 at 12:12 PM
-  </div>
+  <p class="update-info">Feed last updated: May 9, 2026 at 12:12 PM</p>
+
+  <script>
+    (function () {
+      // Listen for theme changes posted by the parent page (same-origin only).
+      var html = document.documentElement;
+      window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) return;
+        var data = event.data;
+        if (!data || typeof data !== 'object') return;
+        if (data.type === 'theme') {
+          html.classList.toggle('dark', !!data.dark);
+        }
+      });
+
+      // Auto-report content height to parent so it can resize the iframe.
+      function reportHeight() {
+        try {
+          var h = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+          );
+          window.parent.postMessage({ type: 'iframe-height', height: h }, window.location.origin);
+        } catch (e) { /* ignore */ }
+      }
+      window.addEventListener('load', reportHeight);
+      window.addEventListener('resize', reportHeight);
+    })();
+  </script>
 </body>
 </html>

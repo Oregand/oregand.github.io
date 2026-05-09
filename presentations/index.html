@@ -1,42 +1,46 @@
 ---
 layout: default
 title: Presentations
-description: Slide decks and presentation materials from talks by David O'Regan.
+description: Slide decks and materials from talks by David O'Regan on engineering leadership, AI, and GitHub Copilot.
+permalink: /presentations/
 ---
 
 <div class="container mx-auto px-4 py-12">
-    <h1 class="text-4xl md:text-5xl font-medium text-center mb-4 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ page.title }}</h1>
+  <header class="text-center mb-12 max-w-2xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ page.title }}</h1>
+    <p class="text-lg text-md-on-surface-variant dark:text-md-dark-on-surface-variant">{{ page.description }}</p>
+  </header>
 
-    <div class="text-center mb-12 max-w-2xl mx-auto">
-        <p class="text-lg text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
-            Slide decks and materials from talks on engineering leadership, AI, and GitHub Copilot.
-        </p>
-    </div>
-
+  {% if site.data.presentations and site.data.presentations.size > 0 %}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {% for presentation in site.data.presentations %}
-        <article class="md-card-elevated flex flex-col">
-            <div class="h-48 bg-gradient-to-br from-md-primary to-md-secondary dark:from-md-dark-primary-container dark:to-md-dark-surface-container-high flex items-center justify-center">
-                <i class="fas fa-file-pdf text-md-on-primary dark:text-md-dark-on-primary-container text-6xl opacity-90"></i>
+      {% for presentation in site.data.presentations %}
+        <article class="md-card-elevated overflow-hidden flex flex-col group transition-transform hover:-translate-y-1">
+          <div class="h-48 bg-gradient-to-br from-md-primary-container to-md-tertiary-container dark:from-md-dark-primary-container dark:to-md-dark-surface-container-high flex items-center justify-center" aria-hidden="true">
+            <i class="fas fa-file-pdf text-md-on-primary-container dark:text-md-dark-on-primary-container text-6xl opacity-90"></i>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
+              <time datetime="{{ presentation.date }}">{{ presentation.date | date: "%b %-d, %Y" }}</time>
+              {% if presentation.event and presentation.event != "" %}
+                <span aria-hidden="true">·</span><span>{{ presentation.event }}</span>
+              {% endif %}
             </div>
-            <div class="p-6 flex flex-col flex-1">
-                <div class="flex justify-between items-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
-                    <time datetime="{{ presentation.date }}">{{ presentation.date | date: "%b %-d, %Y" }}</time>
-                    {% if presentation.event and presentation.event != "" %}
-                    <span>{{ presentation.event }}</span>
-                    {% endif %}
-                </div>
-                <h2 class="text-xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface">
-                    {{ presentation.title }}
-                </h2>
-                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ presentation.description }}</p>
-                <a href="{{ '/assets/presentations/' | append: presentation.file | relative_url }}"
-                   download="{{ presentation.file }}"
-                   class="md-btn-tonal self-start">
-                    <i class="fas fa-download"></i> Download Slides
-                </a>
-            </div>
+            <h2 class="text-xl font-medium mb-3 leading-snug text-md-on-surface dark:text-md-dark-on-surface">
+              {{ presentation.title }}
+            </h2>
+            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ presentation.description }}</p>
+            <a
+              href="{{ '/assets/presentations/' | append: presentation.file | relative_url }}"
+              download="{{ presentation.file }}"
+              class="md-btn-tonal self-start"
+              aria-label="Download slides for {{ presentation.title | escape }}">
+              <i class="fas fa-download" aria-hidden="true"></i> Download slides
+            </a>
+          </div>
         </article>
-        {% endfor %}
+      {% endfor %}
     </div>
+  {% else %}
+    <p class="text-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant">No presentations published yet — check back soon.</p>
+  {% endif %}
 </div>
