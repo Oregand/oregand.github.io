@@ -5,57 +5,51 @@ layout: default
 <article class="container mx-auto px-4 py-12 max-w-3xl">
     <!-- Post Header -->
     <header class="mb-8">
-        <a href="{{ '/blog/' | relative_url }}" class="inline-flex items-center text-primary dark:text-blue-400 mb-4 hover:underline">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+        <a href="{{ '/blog/' | relative_url }}" class="md-btn-text -ml-3 mb-4">
+            <i class="fas fa-arrow-left text-sm"></i> Back to Blog
         </a>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-secondary dark:text-gray-100">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">
             {{ page.title }}
         </h1>
-        <div class="flex items-center text-gray-600 dark:text-gray-400 mb-6">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-6">
             <div class="flex items-center">
-                <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}" 
-                     class="w-10 h-10 rounded-full mr-3">
+                <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}"
+                     class="w-9 h-9 rounded-full mr-2">
                 <span>{{ page.author | default: site.author }}</span>
             </div>
-            <span class="mx-3">•</span>
+            <span aria-hidden="true">•</span>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-            <span class="mx-3">•</span>
+            {% if page.readTime %}
+            <span aria-hidden="true">•</span>
             <span>{{ page.readTime }}</span>
+            {% endif %}
         </div>
         {% if page.image %}
-        <div class="h-80 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden mb-8">
-            <img src="{{ page.image }}" 
+        <div class="h-80 bg-md-surface-container dark:bg-md-dark-surface-container rounded-md-lg overflow-hidden mb-8 shadow-md-1">
+            <img src="{{ page.image }}"
                  alt="{{ page.imageAlt | default: page.title }}" class="w-full h-full object-cover">
         </div>
         {% endif %}
     </header>
 
-    <!-- Post Content with Enhanced Tailwind Typography Classes -->
-    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert 
-                prose-headings:text-secondary dark:prose-headings:text-gray-100 
-                prose-a:text-primary dark:prose-a:text-blue-400 
-                prose-blockquote:border-l-4 prose-blockquote:border-primary dark:prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic 
-                prose-img:rounded-lg prose-img:my-8
-                
-                prose-code:font-mono prose-code:text-sm prose-code:px-1 prose-code:py-0.5 prose-code:rounded 
-                prose-code:bg-slate-100 prose-code:text-rose-500 dark:prose-code:bg-slate-800 dark:prose-code:text-rose-400
-                
-                prose-pre:bg-slate-50 dark:prose-pre:bg-slate-900 prose-pre:shadow 
-                prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto
-                
-                prose-pre:code:bg-transparent dark:prose-pre:code:bg-transparent
-                prose-pre:code:text-slate-800 dark:prose-pre:code:text-slate-200
-                prose-pre:code:p-0 prose-pre:code:leading-relaxed">
+    <!-- Post Content -->
+    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert
+                prose-headings:font-medium prose-headings:tracking-tight
+                prose-h2:mt-12 prose-h3:mt-8
+                prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-blockquote:italic
+                prose-img:rounded-md-md prose-img:my-8 prose-img:shadow-md-1
+                prose-pre:rounded-md-md prose-pre:shadow-md-1
+                prose-code:font-mono prose-code:text-sm">
         {{ content }}
     </div>
-    
-    <div class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
-        <div class="flex items-center">
-            <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}" 
-                 class="w-16 h-16 rounded-full mr-4">
+
+    <div class="border-t border-md-outline-variant dark:border-md-dark-outline-variant mt-12 pt-8">
+        <div class="flex items-start gap-4">
+            <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}"
+                 class="w-16 h-16 rounded-full">
             <div>
-                <h3 class="text-lg font-bold">About the Author</h3>
-                <p class="text-gray-600 dark:text-gray-400">
+                <h3 class="text-lg font-medium mb-1">About the Author</h3>
+                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                     {{ page.author | default: site.author }} is a Senior Engineering Manager at GitHub, leading teams responsible for GitHub Copilot. With a background in frontend engineering and AI, David is passionate about the intersection of artificial intelligence and developer tooling.
                 </p>
             </div>
@@ -64,37 +58,37 @@ layout: default
 </article>
 
 <!-- Related Posts -->
-<section class="bg-white dark:bg-gray-800 py-12 mt-12">
+<section class="bg-md-surface-container-low dark:bg-md-dark-surface-container-low py-16 mt-12 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
     <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-2xl font-bold mb-8 text-secondary dark:text-gray-100">Related Articles</h2>
-        
+        <h2 class="text-2xl md:text-3xl font-medium mb-8 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">Related Articles</h2>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% assign maxRelated = 3 %}
             {% assign relatedCount = 0 %}
             {% for post in site.posts %}
                 {% if post.url != page.url and relatedCount < maxRelated %}
-                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <a href="{{ post.url | relative_url }}">
-                            <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                    <article class="md-card-elevated flex flex-col">
+                        <a href="{{ post.url | relative_url }}" class="block">
+                            <div class="h-48 bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden">
                                 <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover">
                             </div>
                         </a>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex justify-between items-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
                                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-                                <span>{{ post.readTime }}</span>
+                                {% if post.readTime %}<span>{{ post.readTime }}</span>{% endif %}
                             </div>
                             <a href="{{ post.url | relative_url }}" class="block">
-                                <h3 class="text-xl font-semibold mb-3 hover:text-primary dark:hover:text-blue-400 transition-colors">
+                                <h3 class="text-xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">
                                     {{ post.title }}
                                 </h3>
                             </a>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-                            <a href="{{ post.url | relative_url }}" class="text-primary dark:text-blue-400 font-medium flex items-center">
-                                Read more <i class="fas fa-arrow-right ml-2"></i>
+                            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                            <a href="{{ post.url | relative_url }}" class="md-btn-text self-start">
+                                Read more <i class="fas fa-arrow-right text-sm"></i>
                             </a>
                         </div>
-                    </div>
+                    </article>
                     {% assign relatedCount = relatedCount | plus: 1 %}
                 {% endif %}
             {% endfor %}

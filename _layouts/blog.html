@@ -3,34 +3,34 @@ layout: default
 ---
 
 <div class="container mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold text-center mb-12 text-secondary dark:text-gray-100">{{ page.title }}</h1>
-    
+    <h1 class="text-4xl md:text-5xl font-medium text-center mb-10 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ page.title }}</h1>
+
     {{ content }}
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         {% for post in site.posts %}
-        <div class="blog-post bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-            <a href="{{ post.url | relative_url }}">
-                <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                    <img src="{{ post.image }}" alt="{{ post.imageAlt }}" class="w-full h-full object-cover">
+        <article class="md-card-elevated flex flex-col">
+            <a href="{{ post.url | relative_url }}" class="block">
+                <div class="h-48 bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden">
+                    <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover">
                 </div>
             </a>
-            <div class="p-6">
-                <div class="flex justify-between items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
+            <div class="p-6 flex flex-col flex-1">
+                <div class="flex justify-between items-center text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
                     <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-                    <span>{{ post.readTime }}</span>
+                    {% if post.readTime %}<span>{{ post.readTime }}</span>{% endif %}
                 </div>
                 <a href="{{ post.url | relative_url }}" class="block">
-                    <h2 class="text-xl font-semibold mb-3 hover:text-primary dark:hover:text-blue-400 transition-colors">
+                    <h2 class="text-xl font-medium mb-3 text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">
                         {{ post.title }}
                     </h2>
                 </a>
-                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-                <a href="{{ post.url | relative_url }}" class="text-primary dark:text-blue-400 font-medium flex items-center">
-                    Read more <i class="fas fa-arrow-right ml-2"></i>
+                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                <a href="{{ post.url | relative_url }}" class="md-btn-text self-start">
+                    Read more <i class="fas fa-arrow-right text-sm"></i>
                 </a>
             </div>
-        </div>
+        </article>
         {% endfor %}
     </div>
 </div>

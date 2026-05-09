@@ -1,76 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="David O'Regan - Senior Engineering Manager at GitHub specializing in AI & ML">
-    <title>David O'Regan | Senior Engineering Manager, GitHub Copilot</title>
+    <meta name="description" content="David O'Regan — Senior Engineering Manager, Copilot @ GitHub. Based in Seattle, Washington.">
+    <title>David O'Regan | Senior Engineering Manager, Copilot @ GitHub</title>
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/main.js" defer></script>
 </head>
-<body class="bg-lightGray dark:bg-gray-900 text-textColor dark:text-gray-100 transition-colors duration-300">
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
-        <div class="container mx-auto px-4 py-4">
+<body class="bg-md-surface dark:bg-md-dark-surface text-md-on-surface dark:text-md-dark-on-surface transition-colors duration-300 font-sans">
+    <!-- Top app bar -->
+    <nav class="md-app-bar">
+        <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <a href="#" class="text-xl font-bold text-primary dark:text-blue-400">David O'Regan</a>
+                <a href="#" class="text-lg font-medium text-md-on-surface dark:text-md-dark-on-surface tracking-tight">David O'Regan</a>
                 
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-primary dark:text-blue-400 font-medium">Home</a>
-                    <a href="#about" class="hover:text-primary dark:hover:text-blue-400 transition-colors">About</a>
-                    <a href="#experience" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Experience</a>
-                    <a href="#skills" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Skills</a>
-                    <a href="#github-updates" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Copilot Updates</a>
-                    <a href="blog/index.html" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Blog</a>
-                    <a href="presentations/index.html" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Presentations</a>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#" class="md-nav-link md-nav-link-active px-3">Home</a>
+                    <a href="#about" class="md-nav-link px-3">About</a>
+                    <a href="#experience" class="md-nav-link px-3">Experience</a>
+                    <a href="#skills" class="md-nav-link px-3">Skills</a>
+                    <a href="#github-updates" class="md-nav-link px-3">Copilot Updates</a>
+                    <a href="blog/index.html" class="md-nav-link px-3">Blog</a>
+                    <a href="presentations/index.html" class="md-nav-link px-3">Presentations</a>
                 </div>
 
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-1">
+                    <!-- Dark mode toggle -->
+                    <button id="dark-mode-toggle" class="md-icon-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon dark:hidden text-lg"></i>
+                        <i class="fas fa-sun hidden dark:block text-lg"></i>
+                    </button>
+
                     <!-- Mobile menu button -->
-                    <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" class="md-icon-btn md:hidden" aria-label="Open menu">
+                        <i class="fas fa-bars text-lg"></i>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
-                <a href="#" class="block py-2 text-primary dark:text-blue-400 font-medium">Home</a>
-                <a href="#about" class="block py-2 hover:text-primary dark:hover:text-blue-400">About</a>
-                <a href="#experience" class="block py-2 hover:text-primary dark:hover:text-blue-400">Experience</a>
-                <a href="#skills" class="block py-2 hover:text-primary dark:hover:text-blue-400">Skills</a>
-                <a href="#github-updates" class="block py-2 hover:text-primary dark:hover:text-blue-400">Copilot Updates</a>
-                <a href="blog/index.html" class="block py-2 hover:text-primary dark:hover:text-blue-400">Blog</a>
-                <a href="presentations/index.html" class="block py-2 hover:text-primary dark:hover:text-blue-400">Presentations</a>
+                <a href="#" class="block py-2 md-nav-link md-nav-link-active">Home</a>
+                <a href="#about" class="block py-2 md-nav-link">About</a>
+                <a href="#experience" class="block py-2 md-nav-link">Experience</a>
+                <a href="#skills" class="block py-2 md-nav-link">Skills</a>
+                <a href="#github-updates" class="block py-2 md-nav-link">Copilot Updates</a>
+                <a href="blog/index.html" class="block py-2 md-nav-link">Blog</a>
+                <a href="presentations/index.html" class="block py-2 md-nav-link">Presentations</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-white dark:bg-gray-800 py-16 md:py-24 shadow-md transition-colors duration-300 animate-fade-in">
+    <header class="bg-md-surface-container-low dark:bg-md-dark-surface-container-low py-20 md:py-28 transition-colors duration-300 animate-fade-in border-b border-md-outline-variant/40 dark:border-md-dark-outline-variant/40">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
                 <div class="md:w-1/3 flex justify-center">
-                    <div class="w-56 h-56 rounded-full overflow-hidden shadow-lg">
+                    <div class="w-56 h-56 rounded-full overflow-hidden shadow-md-3 ring-4 ring-md-primary-container dark:ring-md-dark-primary-container">
                         <img src="https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4" alt="David O'Regan" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="md:w-2/3 text-center md:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-secondary dark:text-white">David O'Regan</h1>
-                    <h2 class="text-xl md:text-2xl font-medium mb-6 text-primary dark:text-blue-400">
-                        Senior Engineering Manager, GitHub Copilot
+                    <h1 class="text-4xl md:text-5xl font-medium mb-2 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">David O'Regan <span class="text-base font-normal text-md-on-surface-variant dark:text-md-dark-on-surface-variant align-middle ml-2">(he/him)</span></h1>
+                    <h2 class="text-xl md:text-2xl font-normal mb-6 text-md-primary dark:text-md-dark-primary">
+                        Senior Engineering Manager, Copilot @ GitHub
                     </h2>
-                    <div class="flex items-center justify-center md:justify-start mb-6 text-gray-600 dark:text-gray-300">
+                    <div class="flex items-center justify-center md:justify-start mb-8 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                         <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Seattle</span>
+                        <span>Seattle, Washington, United States</span>
                     </div>
-                    <div class="flex gap-4 justify-center md:justify-start">
-                        <a href="https://github.com/oregand" target="_blank" class="inline-block px-6 py-3 rounded-lg font-semibold transition duration-300 ease-in-out bg-gray-800 hover:bg-gray-700 text-white">
-                            <i class="fab fa-github mr-2"></i> GitHub
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <a href="https://github.com/oregand" target="_blank" rel="noopener" class="md-btn-filled">
+                            <i class="fab fa-github"></i> GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" class="inline-block px-6 py-3 rounded-lg font-semibold transition duration-300 ease-in-out bg-[#0a66c2] hover:bg-blue-700 text-white">
-                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-btn-tonal">
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                     </div>
                 </div>
@@ -82,26 +88,26 @@
     <section id="about" class="py-16 animate-on-scroll">
         <div class="container mx-auto px-4">
             <h2 class="section-header">About Me</h2>
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md transition-colors duration-300">
-                <p class="text-lg font-medium text-primary dark:text-blue-400 mb-4">
-                    Senior Engineering Manager - Copilot | GitHub
+            <div class="md-card-elevated p-8">
+                <p class="text-lg font-medium text-md-primary dark:text-md-dark-primary mb-4">
+                    Senior Engineering Manager, Copilot @ GitHub
                 </p>
-                <p class="mb-4 dark:text-gray-300">
+                <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                     People leader at the forefront of AI and ML development at GitHub. With a background in frontend engineering, 
                     I've transitioned into managing multiple high-impact teams, driving GitHub's AI initiatives forward.
                 </p>
-                <ul class="list-disc pl-6 mb-4 space-y-2 dark:text-gray-300">
+                <ul class="list-disc pl-6 mb-4 space-y-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                     <li>Leading teams responsible for AI, ML, and Copilot experiences.</li>
                     <li>Expertise spanning from frontend development to AI architecture and LLMs</li>
                     <li>Passionate about empowering teams and delivering cutting-edge AI solutions</li>
                 </ul>
-                <p class="mb-4 dark:text-gray-300">
+                <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                     My journey from Frontend Engineer to Engineering Manager reflects my belief that great technology 
                     is built by great people. I combine technical acumen with a people-first leadership approach to 
                     foster innovation and drive results.
                 </p>
-                <p class="mb-4 dark:text-gray-300">Myers–Briggs: ENFJ-T - <a href="https://www.16personalities.com/enfj-personality">"The Protagonist"</a></p>
-                <blockquote class="italic border-l-4 border-primary dark:border-blue-500 pl-4 py-2 mb-4 dark:text-gray-300">
+                <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Myers–Briggs: ENFJ-T - <a href="https://www.16personalities.com/enfj-personality" target="_blank" rel="noopener" class="text-md-primary dark:text-md-dark-primary hover:underline">"The Protagonist"</a></p>
+                <blockquote class="italic border-l-4 border-md-primary dark:border-md-dark-primary pl-4 py-2 mb-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                     If it didn't ship, it didn't happen.
                 </blockquote>
             </div>
@@ -109,96 +115,137 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300 animate-on-scroll">
+    <section id="experience" class="py-16 bg-md-surface-container-low dark:bg-md-dark-surface-container-low transition-colors duration-300 animate-on-scroll">
         <div class="container mx-auto px-4">
-            <h2 class="section-header dark:text-gray-100">Experience</h2>
+            <h2 class="section-header">Experience</h2>
             
-            <div class="space-y-8">
-                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <div class="space-y-6">
+                <div class="md-card-elevated p-6">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                         <div>
-                            <h3 class="text-xl font-bold text-primary dark:text-blue-400">Senior Engineering Manager - Copilot</h3>
-                            <div class="text-lg font-medium dark:text-gray-200">GitHub</div>
+                            <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary">Senior Engineering Manager, Copilot</h3>
+                            <div class="text-md font-medium text-md-on-surface dark:text-md-dark-on-surface">GitHub · Full-time</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-300 text-sm">
+                        <div class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
                             <div class="flex items-center">
                                 <i class="far fa-calendar-alt mr-2"></i>
-                                <span>April 2025 - Present</span>
+                                <span>Apr 2025 - Present</span>
                             </div>
                             <div class="flex items-center mt-1">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Seattle</span>
+                                <span>Seattle, Washington · Remote</span>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4 dark:text-gray-300">
+                    <div class="mt-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                         <p>Leading teams responsible for GitHub Copilot.</p>
                     </div>
                 </div>
 
-                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="md-card-elevated p-6">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                         <div>
-                            <h3 class="text-xl font-bold text-primary dark:text-blue-400">Senior Engineering Manager, AI & ML</h3>
-                            <div class="text-lg font-medium dark:text-gray-200">GitLab Inc.</div>
-                        </div>
-                        <div class="text-gray-600 dark:text-gray-300 text-sm">
-                            <div class="flex items-center">
-                                <i class="far fa-calendar-alt mr-2"></i>
-                                <span>Jun 2023 - April 2025</span>
-                            </div>
-                            <div class="flex items-center mt-1">
-                                <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Netherlands</span>
-                            </div>
+                            <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary">GitLab</h3>
+                            <div class="text-md font-medium text-md-on-surface dark:text-md-dark-on-surface">Full-time · 5 yrs 4 mos</div>
                         </div>
                     </div>
-                    <div class="mt-4 dark:text-gray-300">
-                        <p>Leading teams responsible for GitLab Duo and AI infrastructure.</p>
+                    <div class="mt-4 space-y-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+                        <div class="border-l-2 border-md-outline-variant dark:border-md-dark-outline-variant pl-4">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                                <div>
+                                    <p class="font-medium text-md-on-surface dark:text-md-dark-on-surface">Senior Engineering Manager, AI &amp; ML</p>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="flex items-center"><i class="far fa-calendar-alt mr-2"></i><span>Jun 2023 - Apr 2025 · 1 yr 11 mos</span></div>
+                                    <div class="flex items-center mt-1"><i class="fas fa-map-marker-alt mr-2"></i><span>Amsterdam, Netherlands · Remote</span></div>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm">Led teams responsible for GitLab Duo and AI infrastructure.</p>
+                        </div>
+                        <div class="border-l-2 border-md-outline-variant dark:border-md-dark-outline-variant pl-4">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                                <div>
+                                    <p class="font-medium text-md-on-surface dark:text-md-dark-on-surface">Engineering Manager, Remote Development</p>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="flex items-center"><i class="far fa-calendar-alt mr-2"></i><span>Jul 2021 - Jun 2023 · 2 yrs</span></div>
+                                    <div class="flex items-center mt-1"><i class="fas fa-map-marker-alt mr-2"></i><span>Dublin, Ireland</span></div>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm">Led development of remote development solutions for GitLab.</p>
+                        </div>
+                        <div class="border-l-2 border-md-outline-variant dark:border-md-dark-outline-variant pl-4">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                                <div>
+                                    <p class="font-medium text-md-on-surface dark:text-md-dark-on-surface">Senior Frontend Engineer</p>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="flex items-center"><i class="far fa-calendar-alt mr-2"></i><span>Jan 2020 - Jul 2021 · 1 yr 7 mos</span></div>
+                                    <div class="flex items-center mt-1"><i class="fas fa-map-marker-alt mr-2"></i><span>Greater Dublin</span></div>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm">Frontend engineering across GitLab's product, focused on React.js.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="md-card-elevated p-6">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                         <div>
-                            <h3 class="text-xl font-bold text-primary dark:text-blue-400">Engineering Manager, Remote Development</h3>
-                            <div class="text-lg font-medium dark:text-gray-200">GitLab Inc.</div>
+                            <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary">Engineering Manager</h3>
+                            <div class="text-md font-medium text-md-on-surface dark:text-md-dark-on-surface">VSware</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-300 text-sm">
+                        <div class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
                             <div class="flex items-center">
                                 <i class="far fa-calendar-alt mr-2"></i>
-                                <span>Jul 2021 - Jun 2023</span>
+                                <span>Mar 2016 - Oct 2019 · 3 yrs 8 mos</span>
                             </div>
                             <div class="flex items-center mt-1">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Ireland</span>
+                                <span>County Dublin, Ireland · Hybrid</span>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4 dark:text-gray-300">
-                        <p>Led development of remote development solutions for GitLab.</p>
+                    <div class="mt-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+                        <p>Managed development teams for an educational technology platform.</p>
                     </div>
                 </div>
 
-                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="md-card-elevated p-6">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                         <div>
-                            <h3 class="text-xl font-bold text-primary dark:text-blue-400">Engineering Manager</h3>
-                            <div class="text-lg font-medium dark:text-gray-200">VSware</div>
+                            <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary">Full Stack Engineer</h3>
+                            <div class="text-md font-medium text-md-on-surface dark:text-md-dark-on-surface">Software Design</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-300 text-sm">
+                        <div class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
                             <div class="flex items-center">
                                 <i class="far fa-calendar-alt mr-2"></i>
-                                <span>Mar 2016 - Oct 2019</span>
+                                <span>Mar 2015 - Mar 2016 · 1 yr 1 mo</span>
                             </div>
                             <div class="flex items-center mt-1">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Ireland</span>
+                                <span>Greater Dublin</span>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4 dark:text-gray-300">
-                        <p>Managed development teams for educational technology platform.</p>
+                </div>
+
+                <div class="md-card-elevated p-6">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                        <div>
+                            <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary">Full Stack Engineer</h3>
+                            <div class="text-md font-medium text-md-on-surface dark:text-md-dark-on-surface">Osedea</div>
+                        </div>
+                        <div class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
+                            <div class="flex items-center">
+                                <i class="far fa-calendar-alt mr-2"></i>
+                                <span>Sep 2014 - Jan 2015 · 5 mos</span>
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Montreal</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,40 +256,40 @@
     <section id="education" class="py-16 animate-on-scroll">
         <div class="container mx-auto px-4">
             <h2 class="section-header">Education</h2>
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md transition-colors duration-300">
+            <div class="md-card-elevated p-6">
                 <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                     <div>
-                        <h3 class="text-xl font-bold text-primary dark:text-blue-400">Dublin City University</h3>
-                        <p class="text-lg font-medium dark:text-gray-200">BSc Computer Applications</p>
+                        <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary">Dublin City University</h3>
+                        <p class="text-md font-medium text-md-on-surface dark:text-md-dark-on-surface">BSc Computer Applications</p>
                     </div>
-                    <div class="text-gray-600 dark:text-gray-300 text-sm">
+                    <div class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
                         <div class="flex items-center">
                             <i class="far fa-calendar-alt mr-2"></i>
                             <span>2009 - 2015</span>
                         </div>
                     </div>
                 </div>
-                <div class="mt-4 dark:text-gray-300">
-                    <p>Activities and societies: weightlifting, debating, canoeing</p>
+                <div class="mt-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+                    <p>Activities and societies: Comp Science Club, Weightlifting, Debating, Canoeing, Yoga</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300 animate-on-scroll">
+    <section id="skills" class="py-16 bg-md-surface-container-low dark:bg-md-dark-surface-container-low transition-colors duration-300 animate-on-scroll">
         <div class="container mx-auto px-4">
-            <h2 class="section-header dark:text-gray-100">Skills</h2>
-            <div class="flex flex-wrap gap-3">
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">AI & ML</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">Engineering Management</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">Team Leadership</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">Frontend Development</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">LLMs</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">AI Infrastructure</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">Model Validation</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">Network Administration</span>
-                <span class="bg-white dark:bg-gray-700 px-4 py-2 rounded-full text-primary dark:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600">Networking</span>
+            <h2 class="section-header">Skills</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="md-chip-assist">AI &amp; ML</span>
+                <span class="md-chip-assist">Engineering Management</span>
+                <span class="md-chip-assist">Team Leadership</span>
+                <span class="md-chip-assist">Frontend Development</span>
+                <span class="md-chip-assist">LLMs</span>
+                <span class="md-chip-assist">AI Infrastructure</span>
+                <span class="md-chip-assist">Model Validation</span>
+                <span class="md-chip-assist">Network Administration</span>
+                <span class="md-chip-assist">Networking</span>
             </div>
         </div>
     </section>
@@ -259,8 +306,8 @@
             <div id="featured-blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Loading indicator -->
                 <div class="col-span-full text-center py-4">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary dark:border-blue-400"></div>
-                    <p class="mt-2 text-gray-600 dark:text-gray-400">Loading posts...</p>
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-md-primary dark:border-md-dark-primary"></div>
+                    <p class="mt-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Loading posts...</p>
                 </div>
                 <!-- Posts will be dynamically added here -->
             </div>
@@ -268,11 +315,11 @@
     </section>
 
     <!-- GitHub Copilot Updates Section -->
-    <section id="github-updates" class="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300 animate-on-scroll">
+    <section id="github-updates" class="py-16 bg-md-surface-container-low dark:bg-md-dark-surface-container-low transition-colors duration-300 animate-on-scroll">
         <div class="container mx-auto px-4">
-            <h2 class="section-header dark:text-gray-100">GitHub Copilot Updates</h2>
-            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden transition-colors duration-300">
-                <iframe src="copilot-feed.html" width="100%" height="600" frameborder="0" class="w-full dark:bg-transparent bg-transparent" id="copilot-feed-iframe"></iframe>
+            <h2 class="section-header">GitHub Copilot Updates</h2>
+            <div class="md-card-elevated overflow-hidden">
+                <iframe src="copilot-feed.html" width="100%" height="600" frameborder="0" class="w-full bg-transparent" id="copilot-feed-iframe"></iframe>
             </div>
         </div>
     </section>
@@ -280,7 +327,7 @@
     <script>
         // Notify iframe about theme changes
         document.addEventListener('DOMContentLoaded', function() {
-            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggle = document.getElementById('dark-mode-toggle');
             const iframe = document.getElementById('copilot-feed-iframe');
             
             if (themeToggle && iframe) {
@@ -301,10 +348,10 @@
     <section id="inspiration" class="py-16 animate-on-scroll">
         <div class="container mx-auto px-4">
             <h2 class="section-header">Inspiration</h2>
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md transition-colors duration-300">
+            <div class="md-card-elevated p-8">
                 <div class="flex flex-col md:flex-row gap-6">
                     <div class="md:w-1/4 flex justify-center md:justify-start">
-                        <div class="w-48 h-48 rounded-lg overflow-hidden shadow-md">
+                        <div class="w-48 h-48 rounded-md-lg overflow-hidden shadow-md-2">
                             <a href="https://ben.balter.com/" target="_blank" rel="noopener">
                                 <img src="https://ben.balter.com/assets/headshot.jpg" alt="Ben Balter" 
                                      class="w-full h-full object-cover hover:opacity-90 transition-opacity" 
@@ -313,20 +360,20 @@
                         </div>
                     </div>
                     <div class="md:w-3/4">
-                        <h3 class="text-xl font-bold text-primary dark:text-blue-400 mb-2">
+                        <h3 class="text-xl font-medium text-md-primary dark:text-md-dark-primary mb-2">
                             Inspired by <a href="https://ben.balter.com/" class="hover:underline" target="_blank" rel="noopener">Ben Balter</a>
                         </h3>
-                        <p class="mb-4 dark:text-gray-300">
+                        <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                             This site draws inspiration from the work of Ben Balter, Director of Hubber Enablement within the Office of the COO at GitHub. 
                             His thoughtful writing on GitHub's culture, work practices, and open source leadership has influenced both my professional approach and my content style.
                         </p>
-                        <p class="mb-4 dark:text-gray-300">
-                            Ben's post on <a href="https://ben.balter.com/2016/09/13/seven-habits-of-highly-effective-githubbers/" class="text-primary dark:text-blue-400 hover:underline" target="_blank" rel="noopener">The seven habits of highly effective GitHubbers</a> 
+                        <p class="mb-6 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+                            Ben's post on <a href="https://ben.balter.com/2016/09/13/seven-habits-of-highly-effective-githubbers/" class="text-md-primary dark:text-md-dark-primary hover:underline" target="_blank" rel="noopener">The seven habits of highly effective GitHubbers</a> 
                             particularly resonates with me as it captures the essence of GitHub's unique work culture through traits like being "professional, but not formal" and the philosophy to "ship early, ship often."
                         </p>
                         <div class="flex justify-end">
-                            <a href="https://ben.balter.com/2016/09/13/seven-habits-of-highly-effective-githubbers/" class="inline-block px-4 py-2 rounded-lg font-medium transition duration-300 ease-in-out bg-primary dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white" target="_blank" rel="noopener">
-                                Read the Article <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            <a href="https://ben.balter.com/2016/09/13/seven-habits-of-highly-effective-githubbers/" class="md-btn-tonal" target="_blank" rel="noopener">
+                                Read the Article <i class="fas fa-external-link-alt text-sm"></i>
                             </a>
                         </div>
                     </div>
@@ -336,67 +383,67 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-16 bg-primary dark:bg-blue-800 text-white transition-colors duration-300">
+    <section class="py-20 bg-md-primary-container dark:bg-md-dark-primary-container text-md-on-primary-container dark:text-md-dark-on-primary-container transition-colors duration-300">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Let's Connect</h2>
-            <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium mb-4 tracking-tight">Let's Connect</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
                 Interested in discussing AI engineering, leadership, or GitHub Copilot? Reach out today.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:doregan@github.com" class="inline-block px-6 py-3 rounded-lg font-semibold transition duration-300 ease-in-out bg-white text-primary hover:bg-blue-100">
-                    <i class="fas fa-envelope mr-2"></i> Email Me
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-btn-filled">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
                 </a>
-                <a href="https://www.linkedin.com/in/oregand7" target="_blank" class="inline-block px-6 py-3 rounded-lg font-semibold transition duration-300 ease-in-out bg-[#0a66c2] hover:bg-blue-700 text-white">
-                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
+                <a href="https://github.com/oregand" target="_blank" rel="noopener" class="md-btn-outlined">
+                    <i class="fab fa-github"></i> Follow on GitHub
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-secondary dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+    <footer class="bg-md-surface-container dark:bg-md-dark-surface-container text-md-on-surface dark:text-md-dark-on-surface py-12 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
-                    <h3 class="text-xl font-bold mb-4">David O'Regan</h3>
-                    <p class="mb-4 text-gray-300">
+                    <h3 class="text-xl font-medium mb-3 tracking-tight">David O'Regan</h3>
+                    <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                         Senior Engineering Manager at GitHub working on Copilot. Passionate about AI, engineering leadership, and building great teams.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/oregand" target="_blank" class="text-white hover:text-gray-300">
+                    <div class="flex space-x-1">
+                        <a href="https://github.com/oregand" target="_blank" rel="noopener" class="md-icon-btn" aria-label="GitHub">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" class="text-white hover:text-gray-300">
+                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-icon-btn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://gitlab.com/oregand" target="_blank" class="text-white hover:text-gray-300">
+                        <a href="https://gitlab.com/oregand" target="_blank" rel="noopener" class="md-icon-btn" aria-label="GitLab">
                             <i class="fab fa-gitlab text-xl"></i>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                    <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Navigation</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white">About</a></li>
-                        <li><a href="#experience" class="text-gray-300 hover:text-white">Experience</a></li>
-                        <li><a href="#skills" class="text-gray-300 hover:text-white">Skills</a></li>
-                        <li><a href="#github-updates" class="text-gray-300 hover:text-white">Copilot Updates</a></li>
-                        <li><a href="blog/index.html" class="text-gray-300 hover:text-white">Blog</a></li>
-                        <li><a href="presentations/index.html" class="text-gray-300 hover:text-white">Presentations</a></li>
+                        <li><a href="#" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">About</a></li>
+                        <li><a href="#experience" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Experience</a></li>
+                        <li><a href="#skills" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Skills</a></li>
+                        <li><a href="#github-updates" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Copilot Updates</a></li>
+                        <li><a href="blog/index.html" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Blog</a></li>
+                        <li><a href="presentations/index.html" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Presentations</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Location</h3>
                     <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt w-6"></i>
-                            <span class="text-gray-300">Seattle</span>
+                        <li class="flex items-center text-md-on-surface dark:text-md-dark-on-surface">
+                            <i class="fas fa-map-marker-alt w-6 text-md-on-surface-variant dark:text-md-dark-on-surface-variant"></i>
+                            <span>Seattle, Washington, United States</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <div class="mt-10 pt-6 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60 text-center text-sm text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                 <p>&copy; 2025 David O'Regan. All rights reserved.</p>
             </div>
         </div>

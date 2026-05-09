@@ -47,7 +47,7 @@ I'm a versatile leader and developer, driving AI initiatives at GitHub. My exper
 
 ### 💼 Leadership Philosophy
 
-I believe in being an approachable manager and a [human-first leader](#). My focus is on empowering teams to innovate, deliver, and grow in the rapidly evolving AI landscape.
+I believe in being an approachable manager and a human-first leader. My focus is on empowering teams to innovate, deliver, and grow in the rapidly evolving AI landscape.
 
 ## 💫 Inspiration
 

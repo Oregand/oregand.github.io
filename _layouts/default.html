@@ -11,46 +11,46 @@
     {% feed_meta %}
     {% seo title=false %}
 </head>
-<body class="bg-lightGray dark:bg-gray-900 text-textColor dark:text-gray-100 transition-colors duration-300">
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
-        <div class="container mx-auto px-4 py-4">
+<body class="bg-md-surface dark:bg-md-dark-surface text-md-on-surface dark:text-md-dark-on-surface transition-colors duration-300 font-sans">
+    <!-- Top app bar -->
+    <nav class="md-app-bar">
+        <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <a href="{{ '/' | relative_url }}" class="text-xl font-bold text-primary dark:text-blue-400">{{ site.title }}</a>
+                <a href="{{ '/' | relative_url }}" class="text-lg font-medium text-md-on-surface dark:text-md-dark-on-surface tracking-tight">{{ site.title }}</a>
                 
-                <div class="hidden md:flex space-x-8">
-                    <a href="{{ '/' | relative_url }}" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Home</a>
-                    <a href="{{ '/#about' | relative_url }}" class="hover:text-primary dark:hover:text-blue-400 transition-colors">About</a>
-                    <a href="{{ '/#experience' | relative_url }}" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Experience</a>
-                    <a href="{{ '/#skills' | relative_url }}" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Skills</a>
-                    <a href="{{ '/#github-updates' | relative_url }}" class="hover:text-primary dark:hover:text-blue-400 transition-colors">Copilot Updates</a>
-                    <a href="{{ '/blog/' | relative_url }}" class="{% if page.url contains '/blog/' %}text-primary dark:text-blue-400 font-medium{% else %}hover:text-primary dark:hover:text-blue-400 transition-colors{% endif %}">Blog</a>
-                    <a href="{{ '/presentations/' | relative_url }}" class="{% if page.url contains '/presentations/' %}text-primary dark:text-blue-400 font-medium{% else %}hover:text-primary dark:hover:text-blue-400 transition-colors{% endif %}">Presentations</a>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="{{ '/' | relative_url }}" class="md-nav-link {% if page.url == '/' %}md-nav-link-active{% endif %} px-3">Home</a>
+                    <a href="{{ '/#about' | relative_url }}" class="md-nav-link px-3">About</a>
+                    <a href="{{ '/#experience' | relative_url }}" class="md-nav-link px-3">Experience</a>
+                    <a href="{{ '/#skills' | relative_url }}" class="md-nav-link px-3">Skills</a>
+                    <a href="{{ '/#github-updates' | relative_url }}" class="md-nav-link px-3">Copilot Updates</a>
+                    <a href="{{ '/blog/' | relative_url }}" class="md-nav-link {% if page.url contains '/blog/' %}md-nav-link-active{% endif %} px-3">Blog</a>
+                    <a href="{{ '/presentations/' | relative_url }}" class="md-nav-link {% if page.url contains '/presentations/' %}md-nav-link-active{% endif %} px-3">Presentations</a>
                 </div>
 
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-1">
                     <!-- Dark mode toggle -->
-                    <button id="dark-mode-toggle" class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 focus:outline-none">
-                        <i class="fas fa-moon dark:hidden text-xl"></i>
-                        <i class="fas fa-sun hidden dark:block text-xl"></i>
+                    <button id="dark-mode-toggle" class="md-icon-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon dark:hidden text-lg"></i>
+                        <i class="fas fa-sun hidden dark:block text-lg"></i>
                     </button>
-                    
+
                     <!-- Mobile menu button -->
-                    <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" class="md-icon-btn md:hidden" aria-label="Open menu">
+                        <i class="fas fa-bars text-lg"></i>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
-                <a href="{{ '/' | relative_url }}" class="block py-2 hover:text-primary dark:hover:text-blue-400">Home</a>
-                <a href="{{ '/#about' | relative_url }}" class="block py-2 hover:text-primary dark:hover:text-blue-400">About</a>
-                <a href="{{ '/#experience' | relative_url }}" class="block py-2 hover:text-primary dark:hover:text-blue-400">Experience</a>
-                <a href="{{ '/#skills' | relative_url }}" class="block py-2 hover:text-primary dark:hover:text-blue-400">Skills</a>
-                <a href="{{ '/#github-updates' | relative_url }}" class="block py-2 hover:text-primary dark:hover:text-blue-400">Copilot Updates</a>
-                <a href="{{ '/blog/' | relative_url }}" class="block py-2 {% if page.url contains '/blog/' %}text-primary dark:text-blue-400 font-medium{% else %}hover:text-primary dark:hover:text-blue-400 transition-colors{% endif %}">Blog</a>
-                <a href="{{ '/presentations/' | relative_url }}" class="block py-2 {% if page.url contains '/presentations/' %}text-primary dark:text-blue-400 font-medium{% else %}hover:text-primary dark:hover:text-blue-400 transition-colors{% endif %}">Presentations</a>
+                <a href="{{ '/' | relative_url }}" class="block py-2 md-nav-link">Home</a>
+                <a href="{{ '/#about' | relative_url }}" class="block py-2 md-nav-link">About</a>
+                <a href="{{ '/#experience' | relative_url }}" class="block py-2 md-nav-link">Experience</a>
+                <a href="{{ '/#skills' | relative_url }}" class="block py-2 md-nav-link">Skills</a>
+                <a href="{{ '/#github-updates' | relative_url }}" class="block py-2 md-nav-link">Copilot Updates</a>
+                <a href="{{ '/blog/' | relative_url }}" class="block py-2 md-nav-link {% if page.url contains '/blog/' %}md-nav-link-active{% endif %}">Blog</a>
+                <a href="{{ '/presentations/' | relative_url }}" class="block py-2 md-nav-link {% if page.url contains '/presentations/' %}md-nav-link-active{% endif %}">Presentations</a>
             </div>
         </div>
     </nav>
@@ -58,49 +58,49 @@
     {{ content }}
 
     <!-- Footer -->
-    <footer class="bg-secondary dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+    <footer class="bg-md-surface-container dark:bg-md-dark-surface-container text-md-on-surface dark:text-md-dark-on-surface py-12 mt-16 transition-colors duration-300 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
-                    <h3 class="text-xl font-bold mb-4">{{ site.title }}</h3>
-                    <p class="mb-4 text-gray-300">
+                    <h3 class="text-xl font-medium mb-3 tracking-tight">{{ site.title }}</h3>
+                    <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                         Senior Engineering Manager at GitHub working on Copilot. Passionate about AI, engineering leadership, and building great teams.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/{{ site.github_username }}" target="_blank" class="text-white hover:text-gray-300">
+                    <div class="flex space-x-1">
+                        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" class="md-icon-btn" aria-label="GitHub">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" class="text-white hover:text-gray-300">
+                        <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-icon-btn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://gitlab.com/oregand" target="_blank" class="text-white hover:text-gray-300">
+                        <a href="https://gitlab.com/oregand" target="_blank" rel="noopener" class="md-icon-btn" aria-label="GitLab">
                             <i class="fab fa-gitlab text-xl"></i>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                    <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Navigation</h3>
                     <ul class="space-y-2">
-                        <li><a href="{{ '/' | relative_url }}" class="text-gray-300 hover:text-white">Home</a></li>
-                        <li><a href="{{ '/#about' | relative_url }}" class="text-gray-300 hover:text-white">About</a></li>
-                        <li><a href="{{ '/#experience' | relative_url }}" class="text-gray-300 hover:text-white">Experience</a></li>
-                        <li><a href="{{ '/#skills' | relative_url }}" class="text-gray-300 hover:text-white">Skills</a></li>
-                        <li><a href="{{ '/#github-updates' | relative_url }}" class="text-gray-300 hover:text-white">Copilot Updates</a></li>
-                        <li><a href="{{ '/blog/' | relative_url }}" class="text-gray-300 hover:text-white">Blog</a></li>
-                        <li><a href="{{ '/presentations/' | relative_url }}" class="text-gray-300 hover:text-white">Presentations</a></li>
+                        <li><a href="{{ '/' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Home</a></li>
+                        <li><a href="{{ '/#about' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">About</a></li>
+                        <li><a href="{{ '/#experience' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Experience</a></li>
+                        <li><a href="{{ '/#skills' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Skills</a></li>
+                        <li><a href="{{ '/#github-updates' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Copilot Updates</a></li>
+                        <li><a href="{{ '/blog/' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Blog</a></li>
+                        <li><a href="{{ '/presentations/' | relative_url }}" class="text-md-on-surface dark:text-md-dark-on-surface hover:text-md-primary dark:hover:text-md-dark-primary transition-colors">Presentations</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <h3 class="text-sm font-medium mb-4 uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant">Location</h3>
                     <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt w-6"></i>
-                            <span class="text-gray-300">Seattle</span>
+                        <li class="flex items-center text-md-on-surface dark:text-md-dark-on-surface">
+                            <i class="fas fa-map-marker-alt w-6 text-md-on-surface-variant dark:text-md-dark-on-surface-variant"></i>
+                            <span>Seattle, Washington, United States</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <div class="mt-10 pt-6 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60 text-center text-sm text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
                 <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
             </div>
         </div>
