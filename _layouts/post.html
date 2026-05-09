@@ -1,66 +1,93 @@
 ---
 layout: default
 ---
-<!-- Blog Post Content -->
-<article class="container mx-auto px-4 py-12 max-w-3xl">
-    <!-- Post Header -->
-    <header class="mb-8">
-        <a href="{{ '/blog/' | relative_url }}" class="md-btn-text -ml-3 mb-4">
+<!-- Reading progress bar -->
+<div id="reading-progress" class="fixed top-0 left-0 right-0 h-0.5 bg-md-primary dark:bg-md-dark-primary z-[60] origin-left scale-x-0 transition-transform duration-150 ease-out"></div>
+
+<!-- Hero header with featured image as backdrop -->
+<header class="relative overflow-hidden bg-md-surface-container-low dark:bg-md-dark-surface-container-low border-b border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
+    {% if page.image %}
+    <div class="absolute inset-0">
+        <img src="{{ page.image }}" alt="" aria-hidden="true" class="w-full h-full object-cover opacity-25 dark:opacity-15">
+        <div class="absolute inset-0 bg-gradient-to-b from-md-surface-container-low/40 via-md-surface-container-low/85 to-md-surface-container-low dark:from-md-dark-surface-container-low/40 dark:via-md-dark-surface-container-low/85 dark:to-md-dark-surface-container-low"></div>
+    </div>
+    {% endif %}
+    <div class="relative container mx-auto px-4 pt-10 pb-12 md:pt-14 md:pb-16 max-w-3xl">
+        <a href="{{ '/blog/' | relative_url }}" class="md-btn-text -ml-3 mb-6">
             <i class="fas fa-arrow-left text-sm"></i> Back to Blog
         </a>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">
+        {% if page.categories %}
+        <div class="flex flex-wrap gap-2 mb-5">
+            {% for category in page.categories %}
+            <span class="md-chip-assist">{{ category }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-5 text-md-on-surface dark:text-md-dark-on-surface tracking-tight leading-[1.1]">
             {{ page.title }}
         </h1>
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-6">
+        {% if page.description %}
+        <p class="text-lg md:text-xl text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-7 leading-relaxed max-w-2xl">
+            {{ page.description }}
+        </p>
+        {% endif %}
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm">
             <div class="flex items-center">
                 <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}"
-                     class="w-9 h-9 rounded-full mr-2">
-                <span>{{ page.author | default: site.author }}</span>
+                     class="w-9 h-9 rounded-full mr-2 ring-2 ring-md-surface dark:ring-md-dark-surface">
+                <span class="font-medium text-md-on-surface dark:text-md-dark-on-surface">{{ page.author | default: site.author }}</span>
             </div>
-            <span aria-hidden="true">•</span>
+            <span aria-hidden="true">·</span>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
             {% if page.readTime %}
-            <span aria-hidden="true">•</span>
+            <span aria-hidden="true">·</span>
             <span>{{ page.readTime }}</span>
             {% endif %}
         </div>
-        {% if page.image %}
-        <div class="h-80 bg-md-surface-container dark:bg-md-dark-surface-container rounded-md-lg overflow-hidden mb-8 shadow-md-1">
-            <img src="{{ page.image }}"
-                 alt="{{ page.imageAlt | default: page.title }}" class="w-full h-full object-cover">
-        </div>
-        {% endif %}
-    </header>
+    </div>
+</header>
 
-    <!-- Post Content -->
-    <div class="prose prose-lg lg:prose-xl max-w-none dark:prose-invert
-                prose-headings:font-medium prose-headings:tracking-tight
-                prose-h2:mt-12 prose-h3:mt-8
-                prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-blockquote:italic
-                prose-img:rounded-md-md prose-img:my-8 prose-img:shadow-md-1
-                prose-pre:rounded-md-md prose-pre:shadow-md-1
-                prose-code:font-mono prose-code:text-sm">
-        {{ content }}
+<!-- Article body -->
+<article class="container mx-auto px-4 -mt-8 md:-mt-12 mb-16 max-w-3xl relative">
+    <div class="md-card bg-md-surface-container-lowest dark:bg-md-dark-surface-container-lowest shadow-md-1 px-6 py-10 md:px-12 md:py-14 rounded-md-lg">
+        <div class="prose prose-lg max-w-none dark:prose-invert
+                    prose-headings:font-medium prose-headings:tracking-tight
+                    prose-h2:text-3xl prose-h3:text-2xl
+                    prose-img:rounded-md-md prose-img:my-8
+                    prose-pre:rounded-md-md
+                    prose-code:font-mono prose-code:before:content-none prose-code:after:content-none">
+            {{ content }}
+        </div>
     </div>
 
-    <div class="border-t border-md-outline-variant dark:border-md-dark-outline-variant mt-12 pt-8">
-        <div class="flex items-start gap-4">
+    <!-- Author footer -->
+    <div class="mt-10 md-card-outlined p-6 md:p-8">
+        <div class="flex flex-col sm:flex-row items-start gap-5">
             <img src="{{ page.authorImage | default: site.author_image }}" alt="{{ page.author | default: site.author }}"
-                 class="w-16 h-16 rounded-full">
-            <div>
-                <h3 class="text-lg font-medium mb-1">About the Author</h3>
-                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
-                    {{ page.author | default: site.author }} is a Senior Engineering Manager at GitHub, leading teams responsible for GitHub Copilot. With a background in frontend engineering and AI, David is passionate about the intersection of artificial intelligence and developer tooling.
+                 class="w-16 h-16 rounded-full ring-2 ring-md-outline-variant dark:ring-md-dark-outline-variant shrink-0">
+            <div class="flex-1">
+                <p class="text-xs uppercase tracking-wider text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-1">Written by</p>
+                <h3 class="text-lg font-medium mb-2 text-md-on-surface dark:text-md-dark-on-surface">{{ page.author | default: site.author }}</h3>
+                <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant leading-relaxed">
+                    Senior Engineering Manager, Copilot @ GitHub. Background in frontend engineering, now leading high-impact AI/ML teams. Based in Seattle, Washington.
                 </p>
+                <div class="flex items-center gap-2 mt-4">
+                    <a href="https://www.linkedin.com/in/oregand7" target="_blank" rel="noopener" class="md-btn-tonal">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                    <a href="https://github.com/Oregand" target="_blank" rel="noopener" class="md-btn-text">
+                        <i class="fab fa-github"></i> Follow on GitHub
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </article>
 
-<!-- Related Posts -->
-<section class="bg-md-surface-container-low dark:bg-md-dark-surface-container-low py-16 mt-12 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
+<!-- Related posts -->
+<section class="bg-md-surface-container-low dark:bg-md-dark-surface-container-low py-16 border-t border-md-outline-variant/60 dark:border-md-dark-outline-variant/60">
     <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-2xl md:text-3xl font-medium mb-8 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">Related Articles</h2>
+        <h2 class="text-2xl md:text-3xl font-medium mb-8 text-md-on-surface dark:text-md-dark-on-surface tracking-tight">Keep reading</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% assign maxRelated = 3 %}
@@ -70,7 +97,7 @@ layout: default
                     <article class="md-card-elevated flex flex-col">
                         <a href="{{ post.url | relative_url }}" class="block">
                             <div class="h-48 bg-md-surface-container dark:bg-md-dark-surface-container overflow-hidden">
-                                <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover">
+                                <img src="{{ post.image }}" alt="{{ post.imageAlt | default: post.title }}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-1">
@@ -83,8 +110,8 @@ layout: default
                                     {{ post.title }}
                                 </h3>
                             </a>
-                            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-                            <a href="{{ post.url | relative_url }}" class="md-btn-text self-start">
+                            <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1 line-clamp-3">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                            <a href="{{ post.url | relative_url }}" class="md-btn-text self-start -ml-3">
                                 Read more <i class="fas fa-arrow-right text-sm"></i>
                             </a>
                         </div>
@@ -95,3 +122,22 @@ layout: default
         </div>
     </div>
 </section>
+
+<script>
+  // Reading progress bar
+  (function () {
+    var bar = document.getElementById('reading-progress');
+    var article = document.querySelector('article .prose');
+    if (!bar || !article) return;
+    function update() {
+      var rect = article.getBoundingClientRect();
+      var total = article.offsetHeight - window.innerHeight;
+      var scrolled = -rect.top;
+      var pct = Math.max(0, Math.min(1, scrolled / Math.max(total, 1)));
+      bar.style.transform = 'scaleX(' + pct + ')';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
