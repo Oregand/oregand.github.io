@@ -4,7 +4,7 @@ This repository contains my personal website and blog, built with Jekyll and dep
 
 ## Hey there, I'm David! 👋 <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px">
 
-## 🚀 Senior Engineering Manager & Full-Stack AI Developer
+## 🚀 Staff Engineering Manager & Full-Stack AI Developer
 
 > "If it didn't ship, it didn't happen"
 
