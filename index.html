@@ -45,53 +45,6 @@ image: https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d
   </div>
 </section>
 
-<!-- GitHub Skyline -->
-<section id="skyline" class="py-16 scroll-mt-24" aria-labelledby="skyline-heading">
-  <div class="container mx-auto px-4">
-    <h2 id="skyline-heading" class="section-header">My GitHub Skyline</h2>
-    <div class="md-card-elevated overflow-hidden">
-      <div id="skyline-viewer" class="skyline-viewer" data-model="{{ '/assets/models/oregand-skyline.glb' | relative_url }}">
-        <img id="skyline-poster" src="{{ '/assets/images/skyline.webp' | relative_url }}"
-             alt="A 3D view of my GitHub contribution skyline from 2008 to 2026, with rows of green towers on a dark base."
-             width="1440" height="810" loading="lazy" decoding="async">
-      </div>
-      <div class="p-6 sm:p-8">
-        <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
-          Here's my GitHub contribution history from 2008 to 2026, turned into a little city.
-          Open the 3D view to take a look around.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <button id="skyline-load" type="button" class="md-btn-filled" hidden>Explore in 3D</button>
-          <button id="skyline-reset" type="button" class="md-btn-tonal" hidden>Reset view</button>
-          <a href="{{ '/assets/models/oregand-skyline.glb' | relative_url }}" download class="md-btn-outlined">Download 3D model</a>
-        </div>
-        <p id="skyline-status" role="status" class="mt-4 text-sm text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
-          The interactive view loads when you choose to explore.
-        </p>
-        <noscript><p class="mt-4">Enable JavaScript to explore the skyline in 3D, or download the model above.</p></noscript>
-      </div>
-    </div>
-  </div>
-</section>
-<script type="module">
-  const button = document.getElementById('skyline-load');
-  const status = document.getElementById('skyline-status');
-  button.hidden = false;
-  button.addEventListener('click', async () => {
-    button.disabled = true;
-    status.textContent = 'Loading the 3D skyline...';
-    try {
-      const { initSkyline } = await import("{{ '/js/skyline.bundle.js' | relative_url }}");
-      await initSkyline();
-      button.hidden = true;
-    } catch (error) {
-      console.error('Unable to load the skyline', error);
-      status.textContent = "The 3D view couldn't load. You can try again or download the model.";
-      button.disabled = false;
-    }
-  });
-</script>
-
 <!-- About Section -->
 <section id="about" class="py-16 scroll-mt-24 animate-on-scroll">
   <div class="container mx-auto px-4">
@@ -407,3 +360,50 @@ image: https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d
     </div>
   </div>
 </section>
+
+<!-- GitHub Skyline -->
+<section id="skyline" class="py-16 scroll-mt-24" aria-labelledby="skyline-heading">
+  <div class="container mx-auto px-4">
+    <h2 id="skyline-heading" class="section-header">My GitHub Skyline</h2>
+    <div class="md-card-elevated overflow-hidden">
+      <div id="skyline-viewer" class="skyline-viewer" data-model="{{ '/assets/models/oregand-skyline.glb' | relative_url }}">
+        <img id="skyline-poster" src="{{ '/assets/images/skyline.webp' | relative_url }}"
+             alt="A 3D view of my GitHub contribution skyline from 2008 to 2026, with rows of green towers on a dark base."
+             width="1440" height="810" loading="lazy" decoding="async">
+      </div>
+      <div class="p-6 sm:p-8">
+        <p class="mb-4 text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+          Here's my GitHub contribution history from 2008 to 2026, turned into a little city.
+          Open the 3D view to take a look around.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button id="skyline-load" type="button" class="md-btn-filled" hidden>Explore in 3D</button>
+          <button id="skyline-reset" type="button" class="md-btn-tonal" hidden>Reset view</button>
+          <a href="{{ '/assets/models/oregand-skyline.glb' | relative_url }}" download class="md-btn-outlined">Download 3D model</a>
+        </div>
+        <p id="skyline-status" role="status" class="mt-4 text-sm text-md-on-surface-variant dark:text-md-dark-on-surface-variant">
+          The interactive view loads when you choose to explore.
+        </p>
+        <noscript><p class="mt-4">Enable JavaScript to explore the skyline in 3D, or download the model above.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="module">
+  const button = document.getElementById('skyline-load');
+  const status = document.getElementById('skyline-status');
+  button.hidden = false;
+  button.addEventListener('click', async () => {
+    button.disabled = true;
+    status.textContent = 'Loading the 3D skyline...';
+    try {
+      const { initSkyline } = await import("{{ '/js/skyline.bundle.js' | relative_url }}");
+      await initSkyline();
+      button.hidden = true;
+    } catch (error) {
+      console.error('Unable to load the skyline', error);
+      status.textContent = "The 3D view couldn't load. You can try again or download the model.";
+      button.disabled = false;
+    }
+  });
+</script>
