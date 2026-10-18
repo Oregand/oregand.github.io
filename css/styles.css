@@ -161,6 +161,32 @@
   transition: opacity 600ms ease-out, transform 600ms ease-out;
   will-change: opacity, transform;
 }
+
+.skyline-viewer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 280px;
+  background: #101923;
+}
+.skyline-viewer img,
+.skyline-viewer canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.skyline-viewer img {
+  object-fit: contain;
+}
+.skyline-viewer canvas:focus-visible {
+  outline: 3px solid #a6c8ff;
+  outline-offset: -3px;
+}
+[hidden] {
+  display: none !important;
+}
 .animate-on-scroll.animate-fade-in,
 .animate-fade-in {
   opacity: 1;

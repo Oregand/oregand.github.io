@@ -5,6 +5,7 @@ module.exports = {
     "./blog/**/*.html",
     "./presentations/**/*.html",
     "./js/*.js",
+    "!./js/skyline.bundle.js",
     "./_layouts/**/*.html",
     "./_includes/**/*.html",
     // Scan posts for class names but ignore code blocks (handled via safelist below if needed).

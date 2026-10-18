@@ -110,6 +110,19 @@ If you want to preview changes locally (optional):
 
 ## Site Structure
 
+### GitHub Skyline
+
+The home page includes my 2008 to 2026 GitHub Skyline. We show a static preview first
+and only load the interactive viewer and model when someone clicks "Explore in 3D".
+The viewer supports touch, mouse and keyboard controls and renders on demand,
+without an animation loop.
+
+To replace the model, run `npm install`, then
+`npm run build:skyline -- /path/to/Oregand-2008-26-github-skyline.stl`.
+This converts the original STL to a compressed glTF model in `assets/models/`.
+Update `assets/images/skyline.webp` to match, then run `npm run build` to rebuild
+the stylesheet and bundled viewer. Commit those generated assets alongside the source.
+
 - `_posts/`: Contains all blog posts as Markdown files
 - `_layouts/`: Contains the HTML templates for different page types
 - `_includes/`: Contains reusable HTML components
