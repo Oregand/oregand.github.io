@@ -22,7 +22,7 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
-    "axios": "^1.20.0",
+    "axios": "^1.21.0",
     "three": "^0.180.0",
     "xml2js": "^0.6.2"
   }
