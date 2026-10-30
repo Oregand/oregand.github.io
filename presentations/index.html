@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Presentations
-description: Slide decks and materials from talks by David O'Regan on engineering leadership, AI, and GitHub Copilot.
+description: Recordings, slide decks, and materials from talks by David O'Regan on engineering leadership, AI, and GitHub Copilot.
 permalink: /presentations/
 ---
 
@@ -16,7 +16,7 @@ permalink: /presentations/
       {% for presentation in site.data.presentations %}
         <article class="md-card-elevated overflow-hidden flex flex-col group transition-transform hover:-translate-y-1">
           <div class="h-48 bg-gradient-to-br from-md-primary-container to-md-tertiary-container dark:from-md-dark-primary-container dark:to-md-dark-surface-container-high flex items-center justify-center" aria-hidden="true">
-            <i class="fas fa-file-pdf text-md-on-primary-container dark:text-md-dark-on-primary-container text-6xl opacity-90"></i>
+            <i class="fas {% if presentation.recording %}fa-play-circle{% else %}fa-file-pdf{% endif %} text-md-on-primary-container dark:text-md-dark-on-primary-container text-6xl opacity-90"></i>
           </div>
           <div class="p-6 flex flex-col flex-1">
             <div class="flex items-center gap-3 text-md-on-surface-variant dark:text-md-dark-on-surface-variant text-sm mb-3">
@@ -29,13 +29,25 @@ permalink: /presentations/
               {{ presentation.title }}
             </h2>
             <p class="text-md-on-surface-variant dark:text-md-dark-on-surface-variant mb-4 flex-1">{{ presentation.description }}</p>
-            <a
-              href="{{ '/assets/presentations/' | append: presentation.file | relative_url }}"
-              download="{{ presentation.file }}"
-              class="md-btn-tonal self-start"
-              aria-label="Download slides for {{ presentation.title | escape }}">
-              <i class="fas fa-download" aria-hidden="true"></i> Download slides
-            </a>
+            <div class="flex flex-wrap gap-3">
+              {% if presentation.recording %}
+                <a
+                  href="{{ presentation.recording }}"
+                  class="md-btn-tonal self-start"
+                  aria-label="Watch recording of {{ presentation.title | escape }}">
+                  <i class="fas fa-play" aria-hidden="true"></i> Watch recording
+                </a>
+              {% endif %}
+              {% if presentation.file %}
+                <a
+                  href="{{ '/assets/presentations/' | append: presentation.file | relative_url }}"
+                  download="{{ presentation.file }}"
+                  class="md-btn-tonal self-start"
+                  aria-label="Download slides for {{ presentation.title | escape }}">
+                  <i class="fas fa-download" aria-hidden="true"></i> Download slides
+                </a>
+              {% endif %}
+            </div>
           </div>
         </article>
       {% endfor %}

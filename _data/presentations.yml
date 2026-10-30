@@ -1,3 +1,9 @@
+- title: "Plugins and engines: Extending GitHub Copilot live"
+  description: "A live demo of how custom agents, skills, hooks, and MCP servers work together in a GitHub Copilot plugin you can use in your own repositories."
+  recording: "https://www.youtube.com/watch?v=XXnNews5GRY"
+  date: "2026-10-29"
+  event: "GitHub Universe 2026"
+
 - title: "GitHub Copilot in Practice"
   description: "A practical guide to using GitHub Copilot effectively in real-world software development workflows."
   file: "github-copilot-in-practice.pdf"
